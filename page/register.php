@@ -56,7 +56,7 @@
     
                                             <div class="row mt-4">
                                                 <div class="col-12 text-center">
-                                                    <p class="text-muted mb-0">Already have account?  <a href="../page/login.php" class="text-muted font-weight-medium ml-1"><b>Sign In</b></a></p>
+                                                    <p class="text-muted mb-0">Already have account?  <a href="../page/login.php" class="text-muted font-weight-medium ml-1"><b>Login</b></a></p>
                                                 </div> <!-- end col -->
                                             </div>
                                             <!-- end row -->

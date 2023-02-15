@@ -41,6 +41,7 @@
                                         </div>
                                         <h1 class="h5 mb-1">Login an Account!</h1>
                                         <p class="text-muted mb-4">Enter your Username and password to access admin panel.</p>
+                                        
                                         <form class="user" method="post" action="../configure/authentication.php">
                                             <div class="form-group">
                                                 <label>Username</label>
