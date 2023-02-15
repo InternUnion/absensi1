@@ -105,120 +105,33 @@
                                     </li>
                                 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-diamond-stone"></i>UI Elements <div class="arrow-down"></div>
+                                        <a class="nav-link dropdown-toggle arrow-none" href="data_karyawan.php" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-account-group"></i>Data Karyawan 
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-components">
-                                            <a href="ui-buttons.html" class="dropdown-item">Buttons</a>
-                                            <a href="ui-cards.html" class="dropdown-item">Cards</a>
-                                            <a href="ui-carousel.html" class="dropdown-item">Carousel</a>
-                                            <a href="ui-embeds.html" class="dropdown-item">Embeds</a>
-                                            <a href="ui-general.html" class="dropdown-item">General</a>
-                                            <a href="ui-grid.html" class="dropdown-item">Grid</a>
-                                            <a href="ui-media-objects.html" class="dropdown-item">Media Objects</a>
-                                            <a href="ui-modals.html" class="dropdown-item">Modals</a>
-                                            <a href="ui-progressbars.html" class="dropdown-item">Progress Bars</a>
-                                            <a href="ui-tabs.html" class="dropdown-item">Tabs</a>
-                                            <a href="ui-typography.html" class="dropdown-item">Typography</a>
-                                            <a href="ui-toasts.html" class="dropdown-item">Toasts</a>
-                                            <a href="ui-tooltips-popovers.html" class="dropdown-item">Tooltips & Popovers</a>
-                                            <a href="ui-scrollspy.html" class="dropdown-item">Scrollspy</a>
-                                            <a href="ui-spinners.html" class="dropdown-item">Spinners</a>
-                                            <a href="ui-sweetalerts.html" class="dropdown-item">Sweet Alerts</a>
-                                        </div>
+                                    </li>
+                                    
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="data_user.php" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-account"></i>Data User
+                                        </a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-format-page-break"></i>Pages <div class="arrow-down"></div>
+                                        <a class="nav-link dropdown-toggle arrow-none" href="data_jabatan.php" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-finance"></i>Data Jabatan 
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-pages">
-                                            <div class="dropdown">
-                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-auth" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Auth Pages <div class="arrow-down"></div>
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="topnav-auth">
-                                                    <a href="auth-login.html" class="dropdown-item">Login</a>
-                                                    <a href="auth-register.html" class="dropdown-item">Register</a>
-                                                    <a href="auth-recoverpw.html" class="dropdown-item">Recover Password</a>
-                                                    <a href="auth-lock-screen.html" class="dropdown-item">Lock Screen</a>
-                                                    <a href="auth-404.html" class="dropdown-item">Error 404</a>
-                                                    <a href="auth-500.html" class="dropdown-item">Error 500</a>
-                                                </div>
-                                            </div>
-                                            <a href="pages-invoice.html" class="dropdown-item">Invoice</a>
-                                            <a href="pages-starter.html" class="dropdown-item">Starter Page</a>
-                                            <a href="pages-maintenance.html" class="dropdown-item">Maintenance</a>
-                                            <a href="pages-faqs.html" class="dropdown-item">FAQs</a>
-                                            <a href="pages-pricing.html" class="dropdown-item">Pricing</a>
-                                        </div>
-                                    </li>
-
-                                   
-
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-forms" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-format-list-bulleted-type"></i>Forms <div class="arrow-down"></div>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-forms">
-                                            <a href="forms-elements.html" class="dropdown-item">Elements</a>
-                                            <a href="forms-plugins.html" class="dropdown-item">Plugins</a>
-                                            <a href="forms-validation.html" class="dropdown-item">Validation</a>
-                                            <a href="forms-mask.html" class="dropdown-item">Masks</a>
-                                            <a href="forms-quilljs.html" class="dropdown-item">Quilljs</a>
-                                            <a href="forms-uploads.html" class="dropdown-item">File Uploads</a>
-                                        </div>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-charts" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-poll"></i>Charts <div class="arrow-down"></div>
+                                        <a class="nav-link dropdown-toggle arrow-none" href="data_absen.php" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-calendar-multiple-check"></i>Data Absen
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-charts">
-                                            <a href="charts-morris.html" class="dropdown-item">Morris</a>
-                                            <a href="charts-google.html" class="dropdown-item">Google</a>
-                                            <a href="charts-chartjs.html" class="dropdown-item">Chartjs</a>
-                                            <a href="charts-sparkline.html" class="dropdown-item">Sparkline</a>
-                                            <a href="charts-knob.html" class="dropdown-item">Jquery Knob</a>
-                                        </div>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-more" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-share-variant"></i>More <div class="arrow-down"></div>
+                                        <a class="nav-link dropdown-toggle arrow-none" href="data_keterangan.php" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-calendar-text"></i>Data Keterangan 
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-more">
-                                            <a href="calendar.html" class="dropdown-item">Calendar</a>
-                                            <div class="dropdown">
-                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-tables" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Tables <div class="arrow-down"></div>
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="topnav-tables">
-                                                    <a href="tables-basic.html" class="dropdown-item">Basic Tables</a>
-                                                    <a href="tables-datatables.html" class="dropdown-item">Data Tables</a>
-                                                </div>
-                                            </div>
-                                            <div class="dropdown">
-                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-icons" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Icons <div class="arrow-down"></div>
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="topnav-icons">
-                                                    <a href="icons-feather.html" class="dropdown-item">Feather Icons</a>
-                                                    <a href="icons-materialdesign.html" class="dropdown-item">Material Design</a>
-                                                    <a href="icons-dripicons.html" class="dropdown-item">Dripicons</a>
-                                                    <a href="icons-fontawesome.html" class="dropdown-item">Font awesome</a>
-                                                </div>
-                                            </div>
-                                            <div class="dropdown">
-                                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-maps" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Maps <div class="arrow-down"></div>
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="topnav-maps">
-                                                    <a href="maps-google.html" class="dropdown-item">Google Maps</a>
-                                                    <a href="maps-vector.html" class="dropdown-item">Vector Maps</a>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </li>
 
                                 </ul>
@@ -252,8 +165,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="mb-4">
-                                            <span class="badge badge-soft-primary float-right">Daily</span>
-                                            <h5 class="card-title mb-0">Cost per Unit</h5>
+                                            <h5 class="card-title mb-0">Data Karyawan</h5>
                                         </div>
                                         <div class="row d-flex align-items-center mb-4">
                                             <div class="col-8">
@@ -261,14 +173,10 @@
                                                     $17.21
                                                 </h2>
                                             </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">12.5% <i
-                                                        class="mdi mdi-arrow-up text-success"></i></span>
-                                            </div>
                                         </div>
 
                                         <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 57%;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%;">
                                             </div>
                                         </div>
                                     </div>
@@ -280,23 +188,18 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="mb-4">
-                                            <span class="badge badge-soft-primary float-right">Per Week</span>
-                                            <h5 class="card-title mb-0">Market Revenue</h5>
+                                            <h5 class="card-title mb-0">Data user</h5>
                                         </div>
                                         <div class="row d-flex align-items-center mb-4">
                                             <div class="col-8">
                                                 <h2 class="d-flex align-items-center mb-0">
-                                                    $1875.54
+                                                    $1875.5
                                                 </h2>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">18.71% <i
-                                                        class="mdi mdi-arrow-down text-danger"></i></span>
                                             </div>
                                         </div>
 
                                         <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;">
                                             </div>
                                         </div>
                                     </div>
@@ -308,8 +211,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="mb-4">
-                                            <span class="badge badge-soft-primary float-right">Per Month</span>
-                                            <h5 class="card-title mb-0">Expenses</h5>
+                                            <h5 class="card-title mb-0">Data Jabatan</h5>
                                         </div>
                                         <div class="row d-flex align-items-center mb-4">
                                             <div class="col-8">
@@ -317,14 +219,10 @@
                                                     $784.62
                                                 </h2>
                                             </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">57% <i
-                                                        class="mdi mdi-arrow-up text-success"></i></span>
-                                            </div>
                                         </div>
 
                                         <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 57%;">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;">
                                             </div>
                                         </div>
                                     </div>
@@ -333,109 +231,12 @@
                                 <!--end card-->
                             </div> <!-- end col-->
 
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <span class="badge badge-soft-primary float-right">All Time</span>
-                                            <h5 class="card-title mb-0">Daily Visits</h5>
-                                        </div>
-                                        <div class="row d-flex align-items-center mb-4">
-                                            <div class="col-8">
-                                                <h2 class="d-flex align-items-center mb-0">
-                                                    1,15,187
-                                                </h2>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">17.8% <i
-                                                        class="mdi mdi-arrow-down text-danger"></i></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
-                                        </div>
-                                    </div>
-                                    <!--end card body-->
-                                </div><!-- end card-->
-                            </div> <!-- end col-->
+                            
                         </div>
                         <!-- end row-->
 
 
-                        <div class="row">
-                            <div class="col-lg-9">
-
-                                <div class="card">
-                                    <div class="card-body">
-
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <h4 class="card-title">Sales Analytics</h4>
-                                                <p class="card-subtitle mb-4">From date of 1st Jan 2020 to continue</p>
-                                                <div id="morris-bar-example" class="morris-chart"></div>
-                                            </div>
-
-                                            <div class="col-lg-4">
-
-                                                <h4 class="card-title">Stock</h4>
-                                                <p class="card-subtitle mb-4">Recent Stock</p>
-
-                                                <div class="text-center">
-                                                    <input data-plugin="knob" data-width="165" data-height="165"
-                                                        data-linecap=round data-fgColor="#7a08c2" value="95"
-                                                        data-skin="tron" data-angleOffset="180" data-readOnly=true
-                                                        data-thickness=".15" />
-                                                    <h5 class="text-muted mt-3">Total sales made today</h5>
-
-
-                                                    <p class="text-muted w-75 mx-auto sp-line-2">Traditional heading
-                                                        elements are
-                                                        designed to work best in the meat of your page content.</p>
-
-                                                    <div class="row mt-3">
-                                                        <div class="col-6">
-                                                            <p class="text-muted font-15 mb-1 text-truncate">Target</p>
-                                                            <h4><i class="fas fa-arrow-up text-success mr-1"></i>$7.8k</h4>
-
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
-                                                            <h4><i class="fas fa-arrow-down text-danger mr-1"></i>$1.4k</h4>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end card body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-
-                            <div class="col-lg-3">
-
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-                                                <h4 class="card-title">Account Transactions</h4>
-                                                <p class="card-subtitle mb-4">Transaction period from 21 July to
-                                                    25 Aug</p>
-                                                <h3>$7841.12 <span class="badge badge-soft-success float-right">+7.5%</span></h3>
-                                            </div>
-                                        </div> <!-- end row -->
-
-                                        <div id="sparkline1" class="mt-3"></div>
-                                    </div>
-                                    <!--end card body-->
-                                </div>
-                                <!--end card-->
-
-                            </div><!-- end col -->
-
-                        </div>
+                        
                         <!--end row-->
 
 
