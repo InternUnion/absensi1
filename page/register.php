@@ -49,7 +49,7 @@
                                                 <label>Password</label>
                                                 <input class="form-control" type="password" placeholder="Password" name="password">
                                                 <br>
-                                                <input class="btn btn-primary btn-block" type="submit" value="Register" name="register">
+                                                <input class="btn btn-success btn-block" type="submit" value="Register" name="register">
                                             </div>
                                             </form>
     
