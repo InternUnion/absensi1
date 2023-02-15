@@ -72,6 +72,41 @@
     </div>
     <!-- end page -->
 
+    <?php
+    if(isset($_GET['error'])){
+    $x = ($_GET['error']);
+        if($x==1){
+        echo "<script>
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+        Toast.fire({
+            icon: 'error',
+            title: 'Username atau Password Salah.'
+        })</script>";
+        }
+        else if($x==2){
+        echo "<script>
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+        Toast.fire({
+            icon: 'warning',
+            title: 'Username atau Password Belum Diisi.'
+        })</script>";
+        }
+        else {
+        echo '';
+        }
+    }
+?>
+
     <!-- jQuery  -->
     <script src="../template/Admin/vertical/assets/js/jquery.min.js"></script>
     <script src="../template/Admin/vertical/assets/js/bootstrap.bundle.min.js"></script>
