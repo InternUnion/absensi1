@@ -43,14 +43,6 @@
                                         <p class="text-muted mb-4">Enter your Username and password to access admin panel.</p>
                                         <form class="user" method="post" action="../configure/authentication.php">
                                             <div class="form-group">
-<<<<<<< Updated upstream
-                                                <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Username" name="nama">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password">
-                                            </div>
-                                            <button class="btn btn-success btn-block waves-effect waves-light"> LogIn </button>
-=======
                                                 <label>Username</label>
                                                 <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Insert Username">
                                             </div>
@@ -62,7 +54,6 @@
 
                                             
                                             
->>>>>>> Stashed changes
                                         </form>
 
                                         <div class="row mt-4">
