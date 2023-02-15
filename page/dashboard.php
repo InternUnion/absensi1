@@ -99,37 +99,37 @@
                             <div class="collapse navbar-collapse" id="topnav-menu-content">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="dashboard.php">
+                                        <a class="nav-link active" href="dashboard.php">
                                             <i class="mdi mdi-home-analytics"></i>Dashboard
                                         </a>
                                     </li>
                                 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="data_karyawan.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link" href="../add/addkaryawan.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-account-group"></i>Data Karyawan 
                                         </a>
                                     </li>
                                     
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="data_user.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link" href="data_user.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-account"></i>Data User
                                         </a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="data_jabatan.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link" href="data_jabatan.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-finance"></i>Data Jabatan 
                                         </a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="data_absen.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link" href="data_absen.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-calendar-multiple-check"></i>Data Absen
                                         </a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="data_keterangan.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link" href="data_keterangan.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-calendar-text"></i>Data Keterangan 
                                         </a>
                                     </li>
