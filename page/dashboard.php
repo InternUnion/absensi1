@@ -111,25 +111,25 @@
                                     </li>
                                     
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="data_user.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="../add/adduser.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-account"></i>Data User
                                         </a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="data_jabatan.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="../add/addjabatan.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-finance"></i>Data Jabatan 
                                         </a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="data_absen.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-calendar-multiple-check"></i>Data Absen
                                         </a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="data_keterangan.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-calendar-text"></i>Data Keterangan 
                                         </a>
                                     </li>
