@@ -172,7 +172,7 @@ $i = 1;
                         <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Add Employee</h4>
-                                        <p class="card-subtitle mb-4">Inser Employee Data</p>
+                                        <p class="card-subtitle mb-4">Insert Employee Data</p>
     
                                         <form method="POST" action="addkaryawan.php">
                                         <div class="form-group" method="POST">
