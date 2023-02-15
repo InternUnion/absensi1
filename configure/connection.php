@@ -1,8 +1,17 @@
 <?php
-    define('DB_SERVER','localhost');
-    define('DB_USERNAME','id20306892_arak');
-    define('DB_PASSWORD','%WX)hJNG}dC58_}r');
-    define('DB_DATABASE','id20306892_db_absensi');
+    define('DB_SERVER','mysql-111283-0.cloudclusters.net:19688');
+    define('DB_USERNAME','admin');
+    define('DB_PASSWORD','fa9DTYBf');
+    define('DB_DATABASE','db_absensi');
 
     $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+
+    if ($db == true){
+
+        echo "berhasil";
+
+    }else{
+
+        echo "tidak berhasil";
+    }
 ?>
