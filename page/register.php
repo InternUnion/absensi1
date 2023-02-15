@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Xeloro - Admin & Dashboard Template</title>
+        <title>Union - Admin & Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="MyraStudio" name="author" />
@@ -16,6 +16,8 @@
         <link href="../template/Admin/horizontal/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="../template/Admin/horizontal/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="../template/Admin/horizontal/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     </head>
 
@@ -38,52 +40,22 @@
                                             </div>
                                             <h1 class="h5 mb-1">Create an Account!</h1>
                                             <p class="text-muted mb-4">Don't have an account? Create your own account, it takes less than a minute</p>
-                                            <form class="user">
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
-                                                    </div>
-                                                </div>
-                                                <a href="" class="btn btn-success btn-block waves-effect waves-light"> Register Account </a>
-    
-                                                <div class="text-center mt-4">
-                                                    <h5 class="text-muted font-size-16">Sign up using</h5>
-                                                
-                                                    <ul class="list-inline mt-3 mb-0">
-                                                        <li class="list-inline-item">
-                                                            <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github-circle"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                
+                                            <form method="POST" action="register.php">
+                                            <div class="form-group" method="POST">
+                                                <div class="container">
+                                                <label>Nama</label>
+                                                <input class="form-control" type="text" placeholder="Nama" name="name">
+                                                <br>
+                                                <label>Password</label>
+                                                <input class="form-control" type="password" placeholder="Password" name="password">
+                                                <br>
+                                                <input class="btn btn-primary btn-block" type="submit" value="Register" name="register">
+                                            </div>
                                             </form>
     
                                             <div class="row mt-4">
                                                 <div class="col-12 text-center">
-                                                    <p class="text-muted mb-0">Already have account?  <a href="pages-login.html" class="text-muted font-weight-medium ml-1"><b>Sign In</b></a></p>
+                                                    <p class="text-muted mb-0">Already have account?  <a href="../page/login.php" class="text-muted font-weight-medium ml-1"><b>Sign In</b></a></p>
                                                 </div> <!-- end col -->
                                             </div>
                                             <!-- end row -->
@@ -98,6 +70,34 @@
             <!-- end container -->
         </div>
         <!-- end page -->
+
+        <?php
+          if(isset($_POST['register'])) {
+
+            $nama = $_POST['name'];
+            $password = $_POST['password'];
+    
+            // include database connection file
+            include_once("../configure/connection.php");
+    
+            // Insert user data into table
+    
+        try { 
+           $query = "INSERT INTO users (nama, password) VALUES('$nama','$password')";
+           $result = mysqli_query($db, $query); 
+       } catch (mysqli_sql_exception $e) { 
+          var_dump($e);
+          exit; 
+       } 
+       echo "<script>Swal.fire({
+        title: 'Success!',
+        text: 'Successfully Register',
+        icon: 'success',
+        confirmButtonText: 'Cool!'
+        })</script>";
+        }
+    
+    ?>
     
         <!-- jQuery  -->
         <script src="../template/Admin/horizontal/assets/js/jquery.min.js"></script>
