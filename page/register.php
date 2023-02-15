@@ -3,14 +3,14 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Union - Admin & Dashboard Template</title>
+        <title>ARAK - Register</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="MyraStudio" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="../template/Admin/horizontal/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="../img/image.png">
 
         <!-- App css -->
         <link href="../template/Admin/horizontal/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -30,10 +30,11 @@
                         <div class="d-flex align-items-center min-vh-100">
                             <div class="w-100 d-block bg-white shadow-lg rounded my-5">
                                 <div class="row">
-                                <img class="col-lg-5 d-none d-lg-block rounded-left" src="../img/logo.jpg" alt="">
+                                <img class="col-lg-5 d-none d-lg-block rounded-left" src="../img/LogoSample_ByTailorBrands.jpg" alt="">
                                     <div class="col-lg-7">
                                         <div class="p-3">
                                             <div class="text-center mb-5">
+                                                <br>
                                                 <a href="index.html" class="text-dark font-size-22 font-family-secondary">
                                                     <i class="mdi mdi-album"></i> <b class="align-middle">ARAK</b>
                                                 </a>
@@ -49,7 +50,7 @@
                                                 <label>Password</label>
                                                 <input class="form-control" type="password" placeholder="Insert Password" name="password">
                                                 <br>
-                                                <input class="btn btn-success btn-block" type="submit" value="Register" name="register">
+                                                <input class="btn btn-primary btn-block" type="submit" value="Register" name="register">
                                             </div>
                                             </form>
     

@@ -3,19 +3,21 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>A R A K Login</title>
+    <title>ARAK - Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="MyraStudio" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="../img/logo.jpg">
+    <link rel="shortcut icon" href="../img/image.png">
 
     <!-- App css -->
     <link href="../template/Admin/vertical/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../template/Admin/vertical/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="../template/Admin/vertical/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -29,23 +31,38 @@
                         <div class="w-100 d-block bg-white shadow-lg rounded my-5">
                             <div class="row">
                                 
-                                <img class="col-lg-5 d-none d-lg-block rounded-left" src="../img/logo.jpg" alt="">
+                                <img class="col-lg-5 d-none d-lg-block rounded-left" src="../img/LogoSample_ByTailorBrands.jpg" alt="">
                                 <div class="col-lg-7">
                                     <div class="p-5">
                                         <div class="text-center mb-5">
                                             <a href="index.html" class="text-dark font-size-22 font-family-secondary">
-                                                <h1>LOGIN</h1>
+                                                <i class="mdi mdi-album"></i> <b class="align-middle">ARAK</b>
                                             </a>
                                         </div>
+                                        <h1 class="h5 mb-1">Login an Account!</h1>
                                         <p class="text-muted mb-4">Enter your Username and password to access admin panel.</p>
                                         <form class="user" method="post" action="../configure/authentication.php">
                                             <div class="form-group">
+<<<<<<< Updated upstream
                                                 <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Username" name="nama">
                                             </div>
                                             <div class="form-group">
                                                 <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password">
                                             </div>
                                             <button class="btn btn-success btn-block waves-effect waves-light"> LogIn </button>
+=======
+                                                <label>Username</label>
+                                                <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Insert Username">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Password</label>
+                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Insert Password">
+                                            </div>
+                                            <a href="#" class="btn btn-primary btn-block waves-effect waves-light"> Log In </a>
+
+                                            
+                                            
+>>>>>>> Stashed changes
                                         </form>
 
                                         <div class="row mt-4">
