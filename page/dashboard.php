@@ -334,7 +334,7 @@
         <script src="../template/Admin/plugins/jquery-knob/jquery.knob.min.js"></script>
 
         <!-- Chart Custom Js-->
-         <script src="../template/Admin/horizontal/assets/pages/knob-chart-demo.js"></script>
+        <script src="../template/Admin/horizontal/assets/pages/knob-chart-demo.js"></script>
 
         <!-- Morris Js-->
         <script src="../template/Admin/plugins/morris-js/morris.min.js"></script>
