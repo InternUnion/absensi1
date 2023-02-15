@@ -158,12 +158,12 @@ $i = 1;
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0 font-size-18">Dashboard</h4>
+                                    <h4 class="mb-0 font-size-100">Employee</h4>
     
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">ARAK</a></li>
-                                            <li class="breadcrumb-item active">Data Karyawan</li>
+                                            <li class="breadcrumb-item active">Employee Data</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -171,15 +171,15 @@ $i = 1;
                         </div>
                         <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Add Karyawan</h4>
-                                        <p class="card-subtitle mb-4">Masukkan Data Karyawan</p>
+                                        <h4 class="card-title">Add Employee</h4>
+                                        <p class="card-subtitle mb-4">Inser Employee Data</p>
     
                                         <form method="POST" action="addkaryawan.php">
                                         <div class="form-group" method="POST">
                                         <form>
                                             <div class="form-group">
-                                                <label>Id Karyawan</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Id Karyawan" name="idkaryawan">
+                                                <label>Employee Id</label>
+                                                <input type="text" class="form-control" placeholder="Enter your Employee Id" name="idkaryawan">
                                             </div>
                                                     
                                             <div class="form-group">
@@ -199,7 +199,7 @@ $i = 1;
 
                                             <div class="form-group">
                                                 <label>Date Of Birth</label>
-                                                <input type="date" class="form-control" placeholder="Enter your Username" name="tanggallahir">
+                                                <input type="date" class="form-control" placeholder="Enter your Date Of Birth" name="tanggallahir">
                                             </div>
 
                                             <div class="form-group">
