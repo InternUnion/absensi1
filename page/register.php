@@ -30,12 +30,12 @@
                         <div class="d-flex align-items-center min-vh-100">
                             <div class="w-100 d-block bg-white shadow-lg rounded my-5">
                                 <div class="row">
-                                    <div class="col-lg-5 d-none d-lg-block bg-register rounded-left"></div>
+                                <img class="col-lg-5 d-none d-lg-block rounded-left" src="../img/logo.jpg" alt="">
                                     <div class="col-lg-7">
-                                        <div class="p-5">
+                                        <div class="p-3">
                                             <div class="text-center mb-5">
                                                 <a href="index.html" class="text-dark font-size-22 font-family-secondary">
-                                                    <i class="mdi mdi-album"></i> <b class="align-middle">XELORO</b>
+                                                    <i class="mdi mdi-album"></i> <b class="align-middle">ARAK</b>
                                                 </a>
                                             </div>
                                             <h1 class="h5 mb-1">Create an Account!</h1>
@@ -43,11 +43,11 @@
                                             <form method="POST" action="register.php">
                                             <div class="form-group" method="POST">
                                                 <div class="container">
-                                                <label>Nama</label>
-                                                <input class="form-control" type="text" placeholder="Nama" name="name">
+                                                <label>Username</label>
+                                                <input class="form-control" type="text" placeholder="Insert Username" name="username">
                                                 <br>
                                                 <label>Password</label>
-                                                <input class="form-control" type="password" placeholder="Password" name="password">
+                                                <input class="form-control" type="password" placeholder="Insert Password" name="password">
                                                 <br>
                                                 <input class="btn btn-success btn-block" type="submit" value="Register" name="register">
                                             </div>
@@ -74,7 +74,7 @@
         <?php
           if(isset($_POST['register'])) {
 
-            $nama = $_POST['name'];
+            $username = $_POST['username'];
             $password = $_POST['password'];
     
             // include database connection file
@@ -83,7 +83,7 @@
             // Insert user data into table
     
         try { 
-           $query = "INSERT INTO users (nama, password) VALUES('$nama','$password')";
+           $query = "INSERT INTO users (username, password) VALUES('$username','$password')";
            $result = mysqli_query($db, $query); 
        } catch (mysqli_sql_exception $e) { 
           var_dump($e);
