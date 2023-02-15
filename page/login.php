@@ -44,16 +44,13 @@
                                         <form class="user" method="post" action="../configure/authentication.php">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Insert Username">
+                                                <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Insert Username" name="username">
                                             </div>
                                             <div class="form-group">
                                                 <label>Password</label>
-                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Insert Password">
+                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Insert Password" name="password">
                                             </div>
-                                            <a href="#" class="btn btn-primary btn-block waves-effect waves-light"> Log In </a>
-
-                                            
-                                            
+                                            <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">Login</button>
                                         </form>
 
                                         <div class="row mt-4">
