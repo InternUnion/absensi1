@@ -152,7 +152,7 @@
                 include_once("../Configure/connection.php");
 
                 // Fetch all users data from database
-                $result = mysqli_query($db, "select * from users");
+                $result = mysqli_query($db, "select * from jabatan");
 
                 ?>
 

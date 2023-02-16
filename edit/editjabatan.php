@@ -12,13 +12,13 @@
 <body>
     <?php 
         include_once("../Configure/connection.php");
-        $id = $_GET['id'];
-        $editjabatann = mysqli_query($db, "SELECT * FROM jabatan WHERE id=$id");
-        $view = mysqli_fetch_array($editjabatann);
+        $id = $_POST['id'];
+        $editjabatan = mysqli_query($db, "SELECT * FROM jabatan WHERE id=$id");
+        $view = mysqli_fetch_array($editjabatan);
 
         if(isset($_POST['editjabatan'])){
-            $jabatan1 = $_POST['jabatan1'];
-            $query = mysqli_query($db, "UPDATE jabatan SET jabatan_karyawan='$jabatan1' WHERE id = '$id'");
+            $jabatan = $_POST['jabatan1'];
+            $query = mysqli_query($db, "UPDATE jabatan SET jabatan_karyawan='$jabatan' WHERE id = '$id'");
             echo "   <script>  Swal.fire({
                 title: 'Success!',
                 text: 'Successfully Edit Jabatan',

@@ -217,14 +217,6 @@ $i = 1;
                                                 <label>Date Of Birth</label>
                                                 <input type="date" class="form-control" placeholder="Enter your Date Of Birth" name="tanggallahir" required>
                                             </div>
-
-                                            <!-- <div class="form-group">
-                                                <label>Gender</label>
-                                                <select name="jeniskelamin" class="form-control" required>
-                                                    <option>Male</option>
-                                                    <option>Female</option>
-                                                </select>
-                                            </div> -->
                                             
                                             <label>Gender</label>
                                             <select class="form-control" data-toggle="select2">
