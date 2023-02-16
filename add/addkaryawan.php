@@ -268,12 +268,15 @@ $i = 1;
                                     <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
                                         <thead>
                                             <tr>
+                                                <th>No</th>
+                                                <th>Employee Id</th>
                                                 <th>Name</th>
+                                                <th>Date Of Birth</th>
+                                                <th>Gender</th>
+                                                <th>Address</th>
+                                                <th>Phone Number</th>
                                                 <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                     
@@ -286,6 +289,10 @@ $i = 1;
                                                 <td>61</td>
                                                 <td>2011/04/25</td>
                                                 <td>$320,800</td>
+                                                <td>61</td>
+                                                <td>2011/04/25</td>
+                                                <td>$320,800</td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td>Garrett Winters</td>
@@ -294,6 +301,9 @@ $i = 1;
                                                 <td>63</td>
                                                 <td>2011/07/25</td>
                                                 <td>$170,750</td>
+                                                <td>61</td>
+                                                <td>2011/04/25</td>
+                                                <td>$320,800</td>
                                             </tr>
                                             <tr>
                                                 <td>Garrett Winters</td>
@@ -302,6 +312,9 @@ $i = 1;
                                                 <td>63</td>
                                                 <td>2011/07/25</td>
                                                 <td>$170,750</td>
+                                                <td>61</td>
+                                                <td>2011/04/25</td>
+                                                <td>$320,800</td>   
                                             </tr>
                                         </tbody>
                                     </table>
@@ -385,10 +398,11 @@ $i = 1;
         <!-- END layout-wrapper -->
 
 
-<!-- jQuery  -->
-<script src="assets/js/jquery.min.js"></script>
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
         <script src="../template/Admin/horizontal/assets/js/bootstrap.bundle.min.js"></script>
         <script src="../template/Admin/horizontal/assets/js/waves.js"></script>
+        <script src="../template/Admin/vertical/assets/js/metismenu.min.js"></script>
         <script src="../template/Admin/horizontal/assets/js/simplebar.min.js"></script>
 
         <!-- App js -->
@@ -412,6 +426,8 @@ $i = 1;
 
         <!-- Datatables init -->
         <script src="../template/Admin/vertical/assets/pages/datatables-demo.js"></script>
+
+        <script src="../template/Admin/vertical/assets/js/theme.js"></script>
 
     </body>
 
