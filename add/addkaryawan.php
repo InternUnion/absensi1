@@ -218,13 +218,23 @@ $i = 1;
                                                 <input type="date" class="form-control" placeholder="Enter your Date Of Birth" name="tanggallahir" required>
                                             </div>
 
-                                            <div class="form-group">
+                                            <!-- <div class="form-group">
                                                 <label>Gender</label>
                                                 <select name="jeniskelamin" class="form-control" required>
                                                     <option>Male</option>
                                                     <option>Female</option>
                                                 </select>
-                                            </div>
+                                            </div> -->
+                                            
+                                            <label>Gender</label>
+                                            <select class="form-control" data-toggle="select2">
+                                                <option>-- Select --</option>
+                                                <optgroup label="Gender">
+                                                    <option value="">Male</option>
+                                                    <option value="">Female</option>
+                                                </optgroup>
+                                            </select>
+                                            <br>
 
                                             <div class="form-group">
                                                 <label>Address</label>
@@ -236,13 +246,15 @@ $i = 1;
                                                 <input type="text" class="form-control" placeholder="Enter your Phone Number" name="notelp" required>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label>Position</label>
-                                                <select name="jabatan" class="form-control" required>
-                                                    <option>CEO</option>
-                                                    <option>HRD</option>
-                                                </select>
-                                            </div>
+                                            <label>Position</label>
+                                            <select class="form-control" data-toggle="select2">
+                                                <option>-- Select --</option>
+                                                <optgroup label="Position">
+                                                    <option value="">CEO</option>
+                                                    <option value="">HRD</option>
+                                                </optgroup>
+                                            </select>
+                                            <br>
                                             <input class="btn btn-primary btn-block" type="submit" value="Add" name="addkaryawan">
                                         </form>
                                         </form>
