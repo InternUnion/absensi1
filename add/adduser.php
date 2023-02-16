@@ -269,57 +269,57 @@
                                             
 
                                             <!-- Edit  -->
-                                        <div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modaledit<?php echo $datausers['id_user']; ?>">
-                                            <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                <h5 class="modal-title">Edit</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                </div>
+                                            <div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modaledit<?php echo $datausers['id_user']; ?>">
+                                                <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title">Edit</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div>
 
-                                                <form method="POST" action="../edit/edituser.php">
-                                                    <div class="modal-body">
-                                                    <div class="card">
-                                                            <div class="form-row">
-                                                            <div class="form-group col-md-6">
-                                                                    <label>Id User</label>
-                                                                    <input type="text" class="form-control" placeholder="Id User" name="id_user" value="<?php echo $datausers['id_user']; ?>" readonly>
-                                                                </div>
+                                                    <form method="POST" action="../edit/edituser.php">
+                                                        <div class="modal-body">
+                                                        <div class="card">
+                                                                <div class="form-row">
                                                                 <div class="form-group col-md-6">
-                                                                    <label>Username</label>
-                                                                    <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo $datausers['username']; ?>">
-                                                                </div>
-                                                                <div class="form-group col-md-6">
-                                                                    <label>Password</label>
-                                                                    <input type="text" class="form-control" placeholder="Password" name="password" value="<?php echo $datausers['password']; ?>">
+                                                                        <label>Id User</label>
+                                                                        <input type="text" class="form-control" placeholder="Id User" name="id_user" value="<?php echo $datausers['id_user']; ?>" readonly>
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Username</label>
+                                                                        <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo $datausers['username']; ?>">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Password</label>
+                                                                        <input type="text" class="form-control" placeholder="Password" name="password" value="<?php echo $datausers['password']; ?>">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        
+                                                    <div class="modal-footer bg-whitesmoke br">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-warning" name="edituser">Update</button>
                                                     </div>
-                                                    
-                                                <div class="modal-footer bg-whitesmoke br">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-warning" name="edituser">Update</button>
-                                                </div>
-                                    
-                                            </form>
-                                            </div>
-                                            </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                            <?php }?>
                                         
-                                        </tbody>
-                                    </table>
-                                    
-                                </div> <!-- end card body-->
-                            </div> <!-- end card -->
-                        </div><!-- end col-->
-                    </div>
-                    <!-- end row-->
+                                                </form>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                                <?php }?>
+                                            
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
 
 
                         

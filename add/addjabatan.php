@@ -237,6 +237,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Id</th>
                                                 <th>Jabatan</th>
                                                 <th>Action</th>
                                             </tr>
@@ -252,10 +253,50 @@
                                             $i++;
                                         ?>
                                             <tr>
-                                                <td><?php echo $i;?></td>
+                                                <td width="5%"><?php echo $i;?></td>
+                                                <td width="10%"><?php echo $datajabatan['id'];?></td>
                                                 <td><?php echo $datajabatan['jabatan_karyawan'];?></td>
-                                                <td><center><a href="#"  class="btn btn-warning" name="edit"><i class=" fas fa-wrench"></i></a> &nbsp 
+                                                <td><center><a href="#"  class="btn btn-warning" data-toggle="modal" data-backdrop="false" data-target="#modaledit<?php echo $datajabatan['id']; ?>" ><i class=" fas fa-wrench"></i></a> &nbsp 
                                                 <a href="../hapus/hapusjabatan.php?jabatan_karyawan=<?php echo $datajabatan['jabatan_karyawan'];?>" class="btn btn-danger" ><i class="fas fa-trash"> Hapus</i></a></center></td>
+                                            
+                                            <!-- Edit  -->
+                                            <div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modaledit<?php echo $datajabatan['id']; ?>">
+                                                <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title">Edit</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div>
+
+                                                    <form method="POST" action="../edit/editjabatan.php">
+                                                        <div class="modal-body">
+                                                        <div class="card">
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Id Jabatan</label>
+                                                                        <input type="text" class="form-control" name="id_jabatan" value="<?php echo $datajabatan['id']; ?>" readonly>
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Position</label>
+                                                                        <input type="text" class="form-control" name="jabatan1" value="<?php echo $datajabatan['jabatan_karyawan']; ?>">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    <div class="modal-footer bg-whitesmoke br">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-warning" name="editjabatan">Update</button>
+                                                    </div>
+                                        
+                                                </form>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                            </div>
 
                                             <?php }?>
                                         
