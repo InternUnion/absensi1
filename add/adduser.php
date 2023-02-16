@@ -265,7 +265,7 @@
                                                 <td><?php echo $datausers['username'];?></td>
                                                 <td><?php echo $datausers['password'];?></td>
                                                 <td><center><a href="#"  class="btn btn-warning" name="edit"><i class=" fas fa-wrench"></i></a> | 
-                                                        <a href="" class="btn btn-danger" ><i class="fas fa-trash"></i></a></center></td>
+                                                        <a href="../hapus/hapususer.php?id_user=<?php echo $datausers['id_user'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a></center></td>
 
                                             <?php }?>
                                         

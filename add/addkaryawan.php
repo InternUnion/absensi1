@@ -308,33 +308,33 @@ $i = 1;
             
                 <tbody>
                                             
-<?php
+                <?php
 
-include_once("../Configure/connection.php");
+                include_once("../Configure/connection.php");
 
-// Fetch all users data from database
-$result = mysqli_query($db, "select * from karyawan");
+                // Fetch all users data from database
+                $result = mysqli_query($db, "select * from karyawan");
 
 
-$i = 1;
+                $i = 1;
 
-while($user_data = mysqli_fetch_array($result)) {
-echo "<tr>";
-echo "<td>".$i++."</td>";
-echo "<td>".$user_data[('id_karyawan')]."</td>";
-echo "<td>".$user_data[('username')]."</td>";
-echo "<td>".$user_data[('password')]."</td>";
-echo "<td>".$user_data[('nama')]."</td>";
-echo "<td>".$user_data[('tgl_lhr')]."</td>";
-echo "<td>".$user_data[('jenkel')]."</td>";
-echo "<td>".$user_data[('alamat')]."</td>";
-echo "<td>".$user_data[('no_tel')]."</td>";
-echo "<td>".$user_data[('jabatan')]."</td>";
-echo "<td><a class='btn btn-warning fas fa-wrench' href='../Edit/editkaryawan.php?id_karyawan=$user_data[id_karyawan]'></a>
-    &nbsp
-    <a class='btn btn-danger fas fa-trash' href='../Delete/deletekaryawan.php?id_karyawan=$user_data[id_karyawan]'></a></td>";
-}
-?>
+                while($user_data = mysqli_fetch_array($result)) {
+                echo "<tr>";
+                echo "<td>".$i++."</td>";
+                echo "<td>".$user_data[('id_karyawan')]."</td>";
+                echo "<td>".$user_data[('username')]."</td>";
+                echo "<td>".$user_data[('password')]."</td>";
+                echo "<td>".$user_data[('nama')]."</td>";
+                echo "<td>".$user_data[('tgl_lhr')]."</td>";
+                echo "<td>".$user_data[('jenkel')]."</td>";
+                echo "<td>".$user_data[('alamat')]."</td>";
+                echo "<td>".$user_data[('no_tel')]."</td>";
+                echo "<td>".$user_data[('jabatan')]."</td>";
+                echo "<td><a class='btn btn-warning fas fa-wrench' href='../Edit/editkaryawan.php?id_karyawan=$user_data[id_karyawan]'></a>
+                    &nbsp
+                    <a class='btn btn-danger fas fa-trash' href='../hapus/hapuskaryawan.php?id_karyawan=$user_data[id_karyawan]'></a></td>";
+                }
+                ?>
 
                     </tbody>
                 </table>
