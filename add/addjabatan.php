@@ -33,7 +33,7 @@
                                         <div class="p-5">
                                             <div class="text-center mb-5">
                                                 <a href="index.html" class="text-dark font-size-22 font-family-secondary">
-                                                    <i class="mdi mdi-album"></i> <b class="align-middle">XELORO</b>
+                                                    <i class="mdi mdi-album"></i> <b class="align-middle">A R A K</b>
                                                 </a>
                                             </div>
                                             

@@ -77,10 +77,10 @@
                                     <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
                                         <span>Profile</span>
                                     </a>
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
                                         Settings
                                     </a>
                                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="logout.php">
@@ -112,25 +112,25 @@
                                     </li>
                                     
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="data_user.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link" href="../add/adduser.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-account"></i>Data User
                                         </a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="data_jabatan.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link" href="../add/addjabatan.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-finance"></i>Data Jabatan 
                                         </a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="data_absen.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-calendar-multiple-check"></i>Data Absen
                                         </a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="data_keterangan.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-calendar-text"></i>Data Keterangan 
                                         </a>
                                     </li>
