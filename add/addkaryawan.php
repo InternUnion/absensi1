@@ -253,7 +253,7 @@ $i = 1;
 
 
                         
-                        <!--end row-->
+                
                         <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -294,28 +294,7 @@ $i = 1;
                                                 <td>$320,800</td>
                                                 
                                             </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>63</td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>63</td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>   
-                                            </tr>
+                                        
                                         </tbody>
                                     </table>
                                     
@@ -323,6 +302,8 @@ $i = 1;
                             </div> <!-- end card -->
                         </div><!-- end col-->
                     </div>
+                    <!-- end row-->
+
 
                         
                     </div> <!-- container-fluid -->
@@ -398,36 +379,38 @@ $i = 1;
         <!-- END layout-wrapper -->
 
 
-        <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="../template/Admin/horizontal/assets/js/bootstrap.bundle.min.js"></script>
-        <script src="../template/Admin/horizontal/assets/js/waves.js"></script>
-        <script src="../template/Admin/vertical/assets/js/metismenu.min.js"></script>
-        <script src="../template/Admin/horizontal/assets/js/simplebar.min.js"></script>
+        
+    <!-- jQuery  -->
+    <script src="../template/admin/horizontal/assets/js/jquery.min.js"></script>
+    <script src="../template/admin/horizontal/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../template/admin/horizontal/assets/js/metismenu.min.js"></script>
+    <script src="../template/admin/horizontal/assets/js/waves.js"></script>
+    <script src="../template/admin/horizontal/assets/js/simplebar.min.js"></script>
 
-        <!-- App js -->
+    <!-- third party js -->
+    <script src="../template/Admin/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../template/Admin/plugins/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../template/Admin/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="../template/Admin/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="../template/Admin/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="../template/Admin/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="../template/Admin/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="../template/Admin/plugins/datatables/buttons.flash.min.js"></script>
+    <script src="../template/Admin/plugins/datatables/buttons.print.min.js"></script>
+    <script src="../template/Admin/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="../template/Admin/plugins/datatables/dataTables.select.min.js"></script>
+    <script src="../template/Admin/plugins/datatables/pdfmake.min.js"></script>
+    <script src="../template/Admin/plugins/datatables/vfs_fonts.js"></script>
+    <!-- third party js ends -->
+
+    <!-- Datatables init -->
+    <script src="../template/admin/horizontal/assets/pages/datatables-demo.js"></script>
+
+    <!-- App js -->
+    <script src="../template/admin/horizontal/assets/js/theme.js"></script>
+
+
         <script src="../template/Admin/horizontal/assets/js/theme.js"></script>
-
-        <!-- third party js -->
-        <script src="../template/Admin/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="../template/Admin/plugins/datatables/dataTables.bootstrap4.js"></script>
-        <script src="../template/Admin/plugins/datatables/dataTables.responsive.min.js"></script>
-        <script src="../template/Admin/plugins/datatables/responsive.bootstrap4.min.js"></script>
-        <script src="../template/Admin/plugins/datatables/dataTables.buttons.min.js"></script>
-        <script src="../template/Admin/plugins/datatables/buttons.bootstrap4.min.js"></script>
-        <script src="../template/Admin/plugins/datatables/buttons.html5.min.js"></script>
-        <script src="../template/Admin/plugins/datatables/buttons.flash.min.js"></script>
-        <script src="../template/Admin/plugins/datatables/buttons.print.min.js"></script>
-        <script src="../template/Admin/plugins/datatables/dataTables.keyTable.min.js"></script>
-        <script src="../template/Admin/plugins/datatables/dataTables.select.min.js"></script>
-        <script src="../template/Admin/plugins/datatables/pdfmake.min.js"></script>
-        <script src="../template/Admin/plugins/datatables/vfs_fonts.js"></script>
-        <!-- third party js ends -->
-
-        <!-- Datatables init -->
-        <script src="../template/Admin/vertical/assets/pages/datatables-demo.js"></script>
-
-        <script src="../template/Admin/vertical/assets/js/theme.js"></script>
 
     </body>
 
