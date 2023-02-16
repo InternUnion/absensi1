@@ -182,12 +182,12 @@
                                         <div class="form-group" method="POST">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Username" name="username">
+                                                <input type="text" class="form-control" placeholder="Enter your Username" name="username" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Password</label>
-                                                <input type="password" class="form-control" placeholder="Enter your Password" name="password" >
+                                                <input type="password" class="form-control" placeholder="Enter your Password" name="password" required>
                                             </div>
 
                                             <input class="btn btn-primary btn-block" type="submit" value="Add" name="addusers">
@@ -264,9 +264,52 @@
                                                 <td><?php echo $datausers['id_user'];?></td>
                                                 <td><?php echo $datausers['username'];?></td>
                                                 <td><?php echo $datausers['password'];?></td>
-                                                <td><center><a href="#"  class="btn btn-warning" name="edit"><i class=" fas fa-wrench"></i></a> &nbsp
+                                                <td><center><a href="#"  class="btn btn-warning" data-toggle="modal" data-backdrop="false" data-target="#modaledit<?php echo $datausers['id_user']; ?>" name="edit"><i class=" fas fa-wrench"></i></a> &nbsp
                                                         <a href="../hapus/hapususer.php?id_user=<?php echo $datausers['id_user'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a></center></td>
+                                            
 
+                                            <!-- Edit  -->
+                                        <div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modaledit<?php echo $datausers['id_user']; ?>">
+                                            <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title">Edit</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+
+                                                <form method="POST" action="../edit/edituser.php">
+                                                    <div class="modal-body">
+                                                    <div class="card">
+                                                            <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                    <label>Id User</label>
+                                                                    <input type="text" class="form-control" placeholder="Id User" name="id_user" value="<?php echo $datausers['id_user']; ?>" readonly>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Username</label>
+                                                                    <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo $datausers['username']; ?>">
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Password</label>
+                                                                    <input type="text" class="form-control" placeholder="Password" name="password" value="<?php echo $datausers['password']; ?>">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                <div class="modal-footer bg-whitesmoke br">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-warning" name="edituser">Update</button>
+                                                </div>
+                                    
+                                            </form>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                        </div>
                                             <?php }?>
                                         
                                         </tbody>

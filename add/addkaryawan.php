@@ -176,6 +176,16 @@ $i = 1;
                             </div>
                         </div>
                         <div class="card">
+                        <?php
+                            include_once("../Configure/connection.php");
+                            $maxid = mysqli_query($db,"select max(id_karyawan) as 'idkaryawan1' from karyawan");
+                            
+                            while($result1 = mysqli_fetch_array($maxid)){
+                                $idterakhir  = $result1['idkaryawan1'];
+                                $tambahid = $idterakhir+1;
+                        }
+
+                        ?>  
                                     <div class="card-body">
                                         <h4 class="card-title">Add Employee</h4>
                                         <p class="card-subtitle mb-4">Insert Employee Data</p>
@@ -185,32 +195,32 @@ $i = 1;
                                         <form>
                                             <div class="form-group">
                                                 <label>Employee Id</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Employee Id" name="idkaryawan">
+                                                <input type="text" class="form-control" value="<?php echo $tambahid?>" name="idkaryawan" readonly>
                                             </div>
                                                     
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Username" name="username">
+                                                <input type="text" class="form-control" placeholder="Enter your Username" name="username" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Password</label>
-                                                <input type="password" class="form-control" placeholder="Enter your Password" name="password" >
+                                                <input type="password" class="form-control" placeholder="Enter your Password" name="password" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Name</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Name" name="nama">
+                                                <input type="text" class="form-control" placeholder="Enter your Name" name="nama" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Date Of Birth</label>
-                                                <input type="date" class="form-control" placeholder="Enter your Date Of Birth" name="tanggallahir">
+                                                <input type="date" class="form-control" placeholder="Enter your Date Of Birth" name="tanggallahir" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Gender</label>
-                                                <select name="jeniskelamin" class="form-control" >
+                                                <select name="jeniskelamin" class="form-control" required>
                                                     <option>Male</option>
                                                     <option>Female</option>
                                                 </select>
@@ -218,17 +228,17 @@ $i = 1;
 
                                             <div class="form-group">
                                                 <label>Address</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Address" name="address">
+                                                <input type="text" class="form-control" placeholder="Enter your Address" name="address" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Phone Number</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Phone Number" name="notelp">
+                                                <input type="text" class="form-control" placeholder="Enter your Phone Number" name="notelp" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Position</label>
-                                                <select name="jabatan" class="form-control" >
+                                                <select name="jabatan" class="form-control" required>
                                                     <option>CEO</option>
                                                     <option>HRD</option>
                                                 </select>
@@ -242,106 +252,106 @@ $i = 1;
                         <!-- end page title -->
                         </div>
                         <!-- end row-->
-    <?php
-          if(isset($_POST['addkaryawan'])) {
+                        <?php
+                            if(isset($_POST['addkaryawan'])) {
 
 
-            $idkaryawan = $_POST['idkaryawan'];
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $name = $_POST['nama'];
-            $tgllhr = $_POST['tanggallahir'];
-            $gender = $_POST['jeniskelamin'];
-            $alamat = $_POST['address'];
-            $notelepon = $_POST['notelp'];
-            $position = $_POST['jabatan'];
-    
-            // include database connection file
-            include_once("../Configure/connection.php");
-    
-            // Insert user data into table
-    
-        try { 
-           $query = "INSERT INTO karyawan(id_karyawan,username,password,nama,tgl_lhr,jenkel,alamat,no_tel,jabatan) VALUES('$idkaryawan','$username','$password','$name','$tgllhr','$gender','$alamat','$notelepon','$position')";
-           $result = mysqli_query($db, $query); 
-       } catch (mysqli_sql_exception $e) { 
-          var_dump($e);
-          exit; 
-       } 
-       echo "<script>Swal.fire({
-        title: 'Success!',
-        text: 'Successfully add Employee',
-        icon: 'success',
-        confirmButtonText: 'Cool!'
-        })</script>";
-        }
-    
-    ?>
+                                $idkaryawan = $_POST['idkaryawan'];
+                                $username = $_POST['username'];
+                                $password = $_POST['password'];
+                                $name = $_POST['nama'];
+                                $tgllhr = $_POST['tanggallahir'];
+                                $gender = $_POST['jeniskelamin'];
+                                $alamat = $_POST['address'];
+                                $notelepon = $_POST['notelp'];
+                                $position = $_POST['jabatan'];
+                        
+                                // include database connection file
+                                include_once("../Configure/connection.php");
+                        
+                                // Insert user data into table
+                        
+                            try { 
+                            $query = "INSERT INTO karyawan(id_karyawan,username,password,nama,tgl_lhr,jenkel,alamat,no_tel,jabatan) VALUES('$idkaryawan','$username','$password','$name','$tgllhr','$gender','$alamat','$notelepon','$position')";
+                            $result = mysqli_query($db, $query); 
+                        } catch (mysqli_sql_exception $e) { 
+                            var_dump($e);
+                            exit; 
+                        } 
+                        echo "<script>Swal.fire({
+                            title: 'Success!',
+                            text: 'Successfully add Employee',
+                            icon: 'success',
+                            confirmButtonText: 'Cool!'
+                            })</script>";
+                            }
+                        
+                        ?>
                         <!--end row-->
 
 
                         
                 
-<div class="row">
-<div class="col-12">
-    <div class="card">
-        <div class="card-body">
+                    <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
 
-            <h4 class="card-title">Employee Data</h4>
-            <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Employee Id</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Name</th>
-                        <th>Date Of Birth</th>
-                        <th>Gender</th>
-                        <th>Address</th>
-                        <th>Phone Number</th>
-                        <th>Position</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-            
-            
-                <tbody>
-                                            
-                <?php
+                                <h4 class="card-title">Employee Data</h4>
+                                <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Employee Id</th>
+                                            <th>Username</th>
+                                            <th>Password</th>
+                                            <th>Name</th>
+                                            <th>Date Of Birth</th>
+                                            <th>Gender</th>
+                                            <th>Address</th>
+                                            <th>Phone Number</th>
+                                            <th>Position</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                
+                                
+                                    <tbody>
+                                                                
+                                    <?php
 
-                include_once("../Configure/connection.php");
+                                    include_once("../Configure/connection.php");
 
-                // Fetch all users data from database
-                $result = mysqli_query($db, "select * from karyawan");
+                                    // Fetch all users data from database
+                                    $result = mysqli_query($db, "select * from karyawan");
 
 
-                $i = 1;
+                                    $i = 1;
 
-                while($user_data = mysqli_fetch_array($result)) {
-                echo "<tr>";
-                echo "<td>".$i++."</td>";
-                echo "<td>".$user_data[('id_karyawan')]."</td>";
-                echo "<td>".$user_data[('username')]."</td>";
-                echo "<td>".$user_data[('password')]."</td>";
-                echo "<td>".$user_data[('nama')]."</td>";
-                echo "<td>".$user_data[('tgl_lhr')]."</td>";
-                echo "<td>".$user_data[('jenkel')]."</td>";
-                echo "<td>".$user_data[('alamat')]."</td>";
-                echo "<td>".$user_data[('no_tel')]."</td>";
-                echo "<td>".$user_data[('jabatan')]."</td>";
-                echo "<td><a class='btn btn-warning fas fa-wrench' href='../Edit/editkaryawan.php?id_karyawan=$user_data[id_karyawan]'></a>
-                    &nbsp
-                    <a class='btn btn-danger fas fa-trash' href='../hapus/hapuskaryawan.php?id_karyawan=$user_data[id_karyawan]'></a></td>";
-                }
-                ?>
+                                    while($user_data = mysqli_fetch_array($result)) {
+                                    echo "<tr>";
+                                    echo "<td>".$i++."</td>";
+                                    echo "<td>".$user_data[('id_karyawan')]."</td>";
+                                    echo "<td>".$user_data[('username')]."</td>";
+                                    echo "<td>".$user_data[('password')]."</td>";
+                                    echo "<td>".$user_data[('nama')]."</td>";
+                                    echo "<td>".$user_data[('tgl_lhr')]."</td>";
+                                    echo "<td>".$user_data[('jenkel')]."</td>";
+                                    echo "<td>".$user_data[('alamat')]."</td>";
+                                    echo "<td>".$user_data[('no_tel')]."</td>";
+                                    echo "<td>".$user_data[('jabatan')]."</td>";
+                                    echo "<td><a class='btn btn-warning fas fa-wrench' href='../Edit/editkaryawan.php?id_karyawan=$user_data[id_karyawan]'></a>
+                                        &nbsp
+                                        <a class='btn btn-danger fas fa-trash' href='../hapus/hapuskaryawan.php?id_karyawan=$user_data[id_karyawan]'></a></td>";
+                                    }
+                                    ?>
 
-                    </tbody>
-                </table>
-            </div> <!-- end card body-->
-        </div> <!-- end card -->
-    </div><!-- end col-->
-</div>
+                                        </tbody>
+                                    </table>
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div>
                     <!-- end row-->
 
 
