@@ -257,7 +257,7 @@
                                                 <td width="10%"><?php echo $datajabatan['id'];?></td>
                                                 <td><?php echo $datajabatan['jabatan_karyawan'];?></td>
                                                 <td><center><a href="#"  class="btn btn-warning" data-toggle="modal" data-backdrop="false" data-target="#modaledit<?php echo $datajabatan['id']; ?>" ><i class=" fas fa-wrench"></i></a> &nbsp 
-                                                <a href="../hapus/hapusjabatan.php?jabatan_karyawan=<?php echo $datajabatan['jabatan_karyawan'];?>" class="btn btn-danger" ><i class="fas fa-trash"> Hapus</i></a></center></td>
+                                                <a href="../hapus/hapusjabatan.php?jabatan_karyawan=<?php echo $datajabatan['jabatan_karyawan'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a></center></td>
                                             
                                             <!-- Edit  -->
                                             <div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modaledit<?php echo $datajabatan['id']; ?>">
