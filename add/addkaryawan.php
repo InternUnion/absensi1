@@ -333,29 +333,97 @@ $i = 1;
                                     <?php
 
                                     include_once("../Configure/connection.php");
-
-                                    // Fetch all users data from database
+                                    $i = 0;
                                     $result = mysqli_query($db, "select * from karyawan");
+                                    while($datakaryawan = mysqli_fetch_array($result)) {
+                                    $i++;
+                                    
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $i;?></td>
+                                            <td><?php echo $datakaryawan['id_karyawan'];?></td>
+                                            <td><?php echo $datakaryawan['username'];?></td>
+                                            <td><?php echo $datakaryawan['password'];?></td>
+                                            <td><?php echo $datakaryawan['nama'];?></td>
+                                            <td><?php echo $datakaryawan['tgl_lhr'];?></td>
+                                            <td><?php echo $datakaryawan['jenkel'];?></td>
+                                            <td><?php echo $datakaryawan['alamat'];?></td>
+                                            <td><?php echo $datakaryawan['no_tel'];?></td>
+                                            <td><?php echo $datakaryawan['jabatan'];?></td>
+                                            <td><a  class="btn btn-warning fas fa-wrench" data-toggle="modal" data-backdrop="false" data-target="#modaledit<?php echo $datakaryawan['id_karyawan']; ?>"></a>
+                                            &nbsp
+                                            <a class="btn btn-danger fas fa-trash" href="../hapus/hapuskaryawan.php?id_karyawan=<?php echo $datakaryawan['id_karyawan']; ?>"></a></td>
+                                        </tr>
 
 
-                                    $i = 1;
+                                        <!-- Edit  -->
+                                        <div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modaledit<?php echo $datakaryawan['id_karyawan']; ?>">
+                                                <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title">Edit</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div>
 
-                                    while($user_data = mysqli_fetch_array($result)) {
-                                    echo "<tr>";
-                                    echo "<td>".$i++."</td>";
-                                    echo "<td>".$user_data[('id_karyawan')]."</td>";
-                                    echo "<td>".$user_data[('username')]."</td>";
-                                    echo "<td>".$user_data[('password')]."</td>";
-                                    echo "<td>".$user_data[('nama')]."</td>";
-                                    echo "<td>".$user_data[('tgl_lhr')]."</td>";
-                                    echo "<td>".$user_data[('jenkel')]."</td>";
-                                    echo "<td>".$user_data[('alamat')]."</td>";
-                                    echo "<td>".$user_data[('no_tel')]."</td>";
-                                    echo "<td>".$user_data[('jabatan')]."</td>";
-                                    echo "<td><a class='btn btn-warning fas fa-wrench' href='../Edit/editkaryawan.php?id_karyawan=$user_data[id_karyawan]'></a>
-                                        &nbsp
-                                        <a class='btn btn-danger fas fa-trash' href='../hapus/hapuskaryawan.php?id_karyawan=$user_data[id_karyawan]'></a></td>";
-                                    }
+                                                    <form method="POST" action="../edit/editkaryawan.php">
+                                                        <div class="modal-body">
+                                                        <div class="card">
+                                                                <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                        <label>Id Karyawan</label>
+                                                                        <input type="text" class="form-control" placeholder="Id Karyawan" name="id_karyawan" value="<?php echo $datakaryawan['id_karyawan']; ?>" readonly>
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Username</label>
+                                                                        <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo $datakaryawan['username']; ?>">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Password</label>
+                                                                        <input type="text" class="form-control" placeholder="Password" name="password" value="<?php echo $datakaryawan['password']; ?>">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Nama</label>
+                                                                        <input type="text" class="form-control" placeholder="Nama" name="nama" value="<?php echo $datakaryawan['nama']; ?>">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Tanggal Lahir</label>
+                                                                        <input type="text" class="form-control" placeholder="Tanggal Lahir" name="tangal_lahir" value="<?php echo $datakaryawan['tgl_lhr']; ?>">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Jenis Kelamin</label>
+                                                                        <input type="text" class="form-control" placeholder="Password" name="jenkel" value="<?php echo $datakaryawan['jenkel']; ?>">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Alamat</label>
+                                                                        <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?php echo $datakaryawan['alamat']; ?>">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>No Telp</label>
+                                                                        <input type="text" class="form-control" placeholder="No Telp" name="no_telp" value="<?php echo $datakaryawan['no_tel']; ?>">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Jabatan</label>
+                                                                        <input type="text" class="form-control" placeholder="Jabatan" name="jabatan" value="<?php echo $datakaryawan['jabatan']; ?>">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    <div class="modal-footer bg-whitesmoke br">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-warning" name="editkaryawan">Update</button>
+                                                    </div>
+                                        
+                                                </form>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                    <?php 
+                                        }
                                     ?>
 
                                         </tbody>
