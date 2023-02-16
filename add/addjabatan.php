@@ -254,7 +254,7 @@
                                             <tr>
                                                 <td><?php echo $i;?></td>
                                                 <td><?php echo $datajabatan['jabatan_karyawan'];?></td>
-                                                <td><center><a href="#"  class="btn btn-warning" name="edit"><i class=" fas fa-wrench"></i></a> | 
+                                                <td><center><a href="#"  class="btn btn-warning" name="edit"><i class=" fas fa-wrench"></i></a> &nbsp 
                                                 <a href="../hapus/hapusjabatan.php?jabatan_karyawan=<?php echo $datajabatan['jabatan_karyawan'];?>" class="btn btn-danger" ><i class="fas fa-trash"> Hapus</i></a></center></td>
 
                                             <?php }?>
