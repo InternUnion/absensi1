@@ -235,73 +235,113 @@ $i = 1;
                                             </div>
                                             <input class="btn btn-primary btn-block" type="submit" value="Add" name="addkaryawan">
                                         </form>
+                                        </form>
                                     </div>
                                     <!-- end card-body-->
                                 </div>     
                         <!-- end page title -->
-    
-                        
-                            
                         </div>
-
-                        
                         <!-- end row-->
+    <?php
+          if(isset($_POST['addkaryawan'])) {
 
 
-                        
+            $idkaryawan = $_POST['idkaryawan'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $name = $_POST['nama'];
+            $tgllhr = $_POST['tanggallahir'];
+            $gender = $_POST['jeniskelamin'];
+            $alamat = $_POST['address'];
+            $notelepon = $_POST['notelp'];
+            $position = $_POST['jabatan'];
+    
+            // include database connection file
+            include_once("../Configure/connection.php");
+    
+            // Insert user data into table
+    
+        try { 
+           $query = "INSERT INTO karyawan(id_karyawan,username,password,nama,tgl_lhr,jenkel,alamat,no_tel,jabatan) VALUES('$idkaryawan','$username','$password','$name','$tgllhr','$gender','$alamat','$notelepon','$position')";
+           $result = mysqli_query($db, $query); 
+       } catch (mysqli_sql_exception $e) { 
+          var_dump($e);
+          exit; 
+       } 
+       echo "<script>Swal.fire({
+        title: 'Success!',
+        text: 'Successfully add Employee',
+        icon: 'success',
+        confirmButtonText: 'Cool!'
+        })</script>";
+        }
+    
+    ?>
                         <!--end row-->
 
 
                         
                 
-                        <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
+<div class="row">
+<div class="col-12">
+    <div class="card">
+        <div class="card-body">
 
-                                    <h4 class="card-title">Buttons example</h4>
-                                    <p class="card-subtitle mb-4">
-                                        The Buttons extension for DataTables provides a common set of options, API methods and styling to display buttons on a page
-                                        that will interact with a DataTable. The core library provides the based framework upon which plug-ins can built.
-                                    </p>
-                                    
-                                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Employee Id</th>
-                                                <th>Name</th>
-                                                <th>Date Of Birth</th>
-                                                <th>Gender</th>
-                                                <th>Address</th>
-                                                <th>Phone Number</th>
-                                                <th>Position</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                    
-                                    
-                                        <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                                
-                                            </tr>
-                                        
-                                        </tbody>
-                                    </table>
-                                    
-                                </div> <!-- end card body-->
-                            </div> <!-- end card -->
-                        </div><!-- end col-->
-                    </div>
+            <h4 class="card-title">Employee Data</h4>
+            <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Employee Id</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Name</th>
+                        <th>Date Of Birth</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Position</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            
+            
+                <tbody>
+                                            
+<?php
+
+include_once("../Configure/connection.php");
+
+// Fetch all users data from database
+$result = mysqli_query($db, "select * from karyawan");
+
+
+$i = 1;
+
+while($user_data = mysqli_fetch_array($result)) {
+echo "<tr>";
+echo "<td>".$i++."</td>";
+echo "<td>".$user_data[('id_karyawan')]."</td>";
+echo "<td>".$user_data[('username')]."</td>";
+echo "<td>".$user_data[('password')]."</td>";
+echo "<td>".$user_data[('nama')]."</td>";
+echo "<td>".$user_data[('tgl_lhr')]."</td>";
+echo "<td>".$user_data[('jenkel')]."</td>";
+echo "<td>".$user_data[('alamat')]."</td>";
+echo "<td>".$user_data[('no_tel')]."</td>";
+echo "<td>".$user_data[('jabatan')]."</td>";
+echo "<td><a class='btn btn-warning fas fa-wrench' href='../Edit/editkaryawan.php?id_karyawan=$user_data[id_karyawan]'></a>
+    &nbsp
+    <a class='btn btn-danger fas fa-trash' href='../Delete/deletekaryawan.php?id_karyawan=$user_data[id_karyawan]'></a></td>";
+}
+?>
+
+                    </tbody>
+                </table>
+            </div> <!-- end card body-->
+        </div> <!-- end card -->
+    </div><!-- end col-->
+</div>
                     <!-- end row-->
 
 
@@ -315,41 +355,7 @@ $i = 1;
 
                 
 
-<?php
-        if(isset($_POST['addkaryawan'])) {
 
-
-        $idkaryawan = $_POST['idkaryawan'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $name = $_POST['nama'];
-        $tanggallahir = $_POST['tanggallahir'];
-        $gender = $_POST['jeniskelamin'];
-        $alamat = $_POST['address'];
-        $notelpon = $_POST['notelp'];
-        $position = $_POST['jabatan'];
-
-        // include database connection file
-        include_once("../Configure/connection.php");
-
-        // Insert user data into table
-
-        try { 
-            $query = "INSERT INTO karyawan(id_karyawan,username,password,nama,tgl_lhr,jenkel,alamat,no_tel,jabatan) VALUES('$idkaryawan','$username','$password','$name','$tanggallahir','$gender','$alamat','$notelpon','$position')";
-            $result = mysqli_query($db, $query); 
-        } catch (mysqli_sql_exception $e) { 
-            var_dump($e);
-            exit; 
-        } 
-        echo "<script>Swal.fire({
-        title: 'Success!',
-        text: 'Successfully add Karyawan',
-        icon: 'success',
-        confirmButtonText: 'Cool!'
-        })</script>";
-        }
-
-?>
 
                 <footer class="footer">
                     <div class="container-fluid">
@@ -408,9 +414,7 @@ $i = 1;
 
     <!-- App js -->
     <script src="../template/admin/horizontal/assets/js/theme.js"></script>
-
-
-        <script src="../template/Admin/horizontal/assets/js/theme.js"></script>
+    <script src="../template/Admin/horizontal/assets/js/theme.js"></script>
 
     </body>
 
