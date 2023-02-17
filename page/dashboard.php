@@ -188,7 +188,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="mb-4">
-                                            <h5 class="card-title mb-0">Data Jabatan</h5>
+                                            <h5 class="card-title mb-0">Data Jabatannn</h5>
                                         </div>
                                         <div class="row d-flex align-items-center mb-4">
                                             <div class="col-8">
