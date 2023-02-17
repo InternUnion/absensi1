@@ -180,7 +180,7 @@
                                         <div class="form-group" method="POST">
                                             <div class="form-group">
                                                 <label>Position</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Position" name="jabatan" required>
+                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" placeholder="Enter your Position" name="jabatan" required>
                                             </div>
 
                                             <input class="btn btn-primary btn-block" type="submit" value="Add" name="addjabatan">
