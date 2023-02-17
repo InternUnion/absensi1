@@ -4,7 +4,13 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<?php
 
+        $idusers = $_SESSION['id_karyawan'];
+        $username = $_SESSION['username'];
+        $level = $_SESSION['level'];
+
+    ?>
     <head>
         <meta charset="utf-8" />
         <title>ARAK - Absen</title>
@@ -83,7 +89,7 @@
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img class="rounded-circle header-profile-user" src="../img/1.jpg"
                                         alt="Header Avatar">
-                                    <span class="d-none d-sm-inline-block ml-1"><?php echo $_SESSION['username'].' | '. $_SESSION['level'];?></span>
+                                    <span class="d-none d-sm-inline-block ml-1"><?php  echo $username.' | '. $level;?></span>
                                     <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right">
