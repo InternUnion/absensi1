@@ -17,6 +17,7 @@
         $user = mysqli_fetch_array($query1);
         $_SESSION['username'] = $user['nama'];   
         $_SESSION['level'] = $user['level'];   
+        $_SESSION['id_karyawan'] = $user['id_karyawan'];  
 
 
     }
