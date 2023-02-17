@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,7 +82,7 @@
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img class="rounded-circle header-profile-user" src="../img/1.jpg"
                                         alt="Header Avatar">
-                                    <span class="d-none d-sm-inline-block ml-1">Slamet Kopling</span>
+                                    <span class="d-none d-sm-inline-block ml-1"><?php echo $_SESSION['username'].' | '. $_SESSION['level'];?></span>
                                     <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right">
