@@ -188,29 +188,6 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="mb-4">
-                                            <h5 class="card-title mb-0">Data user</h5>
-                                        </div>
-                                        <div class="row d-flex align-items-center mb-4">
-                                            <div class="col-8">
-                                                <h2 class="d-flex align-items-center mb-0">
-                                                    $1875.5
-                                                </h2>
-                                            </div>
-                                        </div>
-
-                                        <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end card body-->
-                                </div><!-- end card-->
-                            </div> <!-- end col-->
-
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="mb-4">
                                             <h5 class="card-title mb-0">Data Jabatan</h5>
                                         </div>
                                         <div class="row d-flex align-items-center mb-4">
