@@ -93,7 +93,7 @@
                                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
                                         Settings
                                     </a>
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="logout.php">
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="../page/logout.php">
                                         <span>Log Out</span>
                                     </a>
                                 </div>
