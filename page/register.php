@@ -45,19 +45,19 @@
                                             <div class="form-group" method="POST">
                                                 <div class="container">
                                                 <label>Username</label>
-                                                <input class="form-control" type="text" placeholder="Insert Username" name="username">
+                                                <input class="form-control" type="text" placeholder="Insert Username" name="username" required>
                                                 <br>
                                                 <label>Password</label>
-                                                <input class="form-control" type="password" placeholder="Insert Password" name="password">
+                                                <input class="form-control" type="password" placeholder="Insert Password" name="password" required>
                                                 <br>
                                                 <label>Employee Name</label>
-                                                <input class="form-control" type="text" placeholder="Insert Name" name="name">
+                                                <input class="form-control" type="text" placeholder="Insert Name" name="name" required>
                                                 <br>
                                                 <label>Date Of Birth</label>
-                                                <input class="form-control" type="date" placeholder="Insert Date Of Birth" name="tgllhr">
+                                                <input class="form-control" type="date" placeholder="Insert Date Of Birth" name="tgllhr" required>
                                                 <br>
                                                 <label>Gender</label>
-                                                <select class="form-control" name="jeniskelamin" data-toggle="select2">
+                                                <select class="form-control" name="jeniskelamin" data-toggle="select2" required>
                                                     <option>-- Select --</option>
                                                     <optgroup label="Gender">
                                                         <option value="Male">Male</option>
@@ -66,13 +66,13 @@
                                                 </select>
                                                 <br>
                                                 <label>Address</label>
-                                                <input class="form-control" type="text" placeholder="Insert Address" name="alamat">
+                                                <input class="form-control" type="text" placeholder="Insert Address" name="alamat" required>
                                                 <br>
                                                 <label>Phone Number</label>
-                                                <input class="form-control" type="text" placeholder="Insert Phone Number" name="notelp">
+                                                <input class="form-control" type="text" placeholder="Insert Phone Number" name="notelp" required>
                                                 <br>
                                                 <label>Position</label>
-                                                <select class="form-control" data-toggle="select2" name="jabatan">
+                                                <select class="form-control" data-toggle="select2" name="jabatan" required>
                                                     <option>-- Select --</option>
                                                     <optgroup label="Position">
                                                         <option value="CEO">CEO</option>
@@ -86,7 +86,7 @@
                                                 </select>
                                                 <br>
                                                 <label>Level</label>
-                                                <select class="form-control" data-toggle="select2" name="tingkatan">
+                                                <select class="form-control" data-toggle="select2" name="tingkatan" required>
                                                     <option>-- Select --</option>
                                                     <optgroup label="Level">
                                                         <option value="admin">Admin</option>
