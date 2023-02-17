@@ -12,9 +12,9 @@
 <body>
     <?php 
         include_once("../Configure/connection.php");
-        $id = $_POST['id'];
-        $editjabatan = mysqli_query($db, "SELECT * FROM jabatan WHERE id=$id");
-        $view = mysqli_fetch_array($editjabatan);
+        $id = $_POST['id_jabatan'];
+        // $editjabatan = mysqli_query($db, "SELECT * FROM jabatan WHERE id=$id");
+        // $view = mysqli_fetch_array($editjabatan);
 
         if(isset($_POST['editjabatan'])){
             $jabatan = $_POST['jabatan1'];
