@@ -92,7 +92,7 @@
                                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
                                         Settings
                                     </a>
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="logout.php">
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="../page/logout.php">
                                         <span>Log Out</span>
                                     </a>
                                 </div>
@@ -205,9 +205,11 @@ $i = 1;
                                                 <input type="password" class="form-control" placeholder="Enter your Password" name="password" required>
                                             </div>
 
+                                            
+
                                             <div class="form-group">
                                                 <label>Name</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Name" name="nama" required>
+                                                <input type="text" pattern="[A-Za-z]{3}" class="form-control" placeholder="Enter your Name" name="nama" required>
                                             </div>
 
                                             <div class="form-group">
@@ -232,7 +234,7 @@ $i = 1;
 
                                             <div class="form-group">
                                                 <label>Phone Number</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Phone Number" name="notelp" required>
+                                                <input type="number" class="form-control" placeholder="Enter your Phone Number" name="notelp" required>
                                             </div>
 
                                             <label>Position</label>
