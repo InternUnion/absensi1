@@ -127,7 +127,7 @@
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link" href="../add/addabsen.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-calendar-multiple-check"></i>Data Absen
                                         </a>
                                     </li>

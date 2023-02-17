@@ -7,7 +7,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>ARAK - Position</title>
+        <title>ARAK - Absen</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="MyraStudio" name="author" />
@@ -122,13 +122,13 @@
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link active" href="../add/addjabatan.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link" href="../add/addjabatan.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-finance"></i>Data Jabatan 
                                         </a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="../add/addabsen.php" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link active" href="../add/addabsen.php" aria-haspopup="true" aria-expanded="false">
                                             <i class="mdi mdi-calendar-multiple-check"></i>Data Absen
                                         </a>
                                     </li>
@@ -160,62 +160,17 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0 font-size-100">Data Position</h4>
+                                    <h4 class="mb-0 font-size-100">Data Absen</h4>
     
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">ARAK</a></li>
-                                            <li class="breadcrumb-item active">Data Position</li>
+                                            <li class="breadcrumb-item active">Data Absen</li>
                                         </ol>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Add Position</h4>
-                                        <p class="card-subtitle mb-4">Insert Data Position</p>
-    
-                                        <form method="POST" action="addjabatan.php">
-                                        <div class="form-group" method="POST">
-                                            <div class="form-group">
-                                                <label>Position</label>
-                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" placeholder="Enter your Position" name="jabatan" required>
-                                            </div>
-
-                                            <input class="btn btn-primary btn-block" type="submit" value="Add" name="addjabatan">
-                                        </form>
-                                    </div>
-                                    <!-- end card-body-->
-                                </div>     
-                        <!-- end page title -->    
-                        </div>
-
-                        <?php
-                            if(isset($_POST['addjabatan'])) {
-                            $jabatan = $_POST['jabatan'];
-
-                            // include database connection file
-                            include_once("../Configure/connection.php");
-
-                            // Insert user data into table
-
-                            try { 
-                                $query = "INSERT INTO jabatan(jabatan_karyawan) VALUES('$jabatan')";
-                                $result = mysqli_query($db, $query); 
-                            } catch (mysqli_sql_exception $e) { 
-                                var_dump($e);
-                                exit; 
-                            } 
-                            echo "<script>Swal.fire({
-                            title: 'Success!',
-                            text: 'Successfully add Position',
-                            icon: 'success',
-                            confirmButtonText: 'Cool!'
-                            })</script>";
-                            }
-
-                        ?>
 
                         
                         <!-- end row-->
@@ -224,87 +179,7 @@
                         
                         <!--end row-->
 
-                        <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-
-                                    <h4 class="card-title">Table Position</h4>
-                                    
-                                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Id</th>
-                                                <th>Jabatan</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                    
-                                    
-                                        <tbody>
-                                        <?php
-                                            include_once("../Configure/connection.php");
-                                            $i = 0;
-                                            $query = mysqli_query($db, "select * from jabatan");
-                                            while($datajabatan = mysqli_fetch_array($query)) {
-                                            $i++;
-                                        ?>
-                                            <tr>
-                                                <td width="5%"><?php echo $i;?></td>
-                                                <td width="10%"><?php echo $datajabatan['id'];?></td>
-                                                <td><?php echo $datajabatan['jabatan_karyawan'];?></td>
-                                                <td><center><a href="#"  class="btn btn-warning" data-toggle="modal" data-backdrop="false" data-target="#modaledit<?php echo $datajabatan['id']; ?>" ><i class=" fas fa-wrench"></i></a> &nbsp 
-                                                <a href="../hapus/hapusjabatan.php?jabatan_karyawan=<?php echo $datajabatan['jabatan_karyawan'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a></center></td>
-                                            
-                                            <!-- Edit  -->
-                                            <div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modaledit<?php echo $datajabatan['id']; ?>">
-                                                <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                    <h5 class="modal-title">Edit</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                    </div>
-
-                                                    <form method="POST" action="../edit/editjabatan.php">
-                                                        <div class="modal-body">
-                                                        <div class="card">
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-6">
-                                                                        <label>Id Jabatan</label>
-                                                                        <input type="text" class="form-control" name="id_jabatan" value="<?php echo $datajabatan['id']; ?>" readonly>
-                                                                    </div>
-                                                                    <div class="form-group col-md-6">
-                                                                        <label>Position</label>
-                                                                        <input type="text" class="form-control" name="jabatan1" value="<?php echo $datajabatan['jabatan_karyawan']; ?>">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    <div class="modal-footer bg-whitesmoke br">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-warning" name="editjabatan">Update</button>
-                                                    </div>
-                                        
-                                                </form>
-                                                </div>
-                                                </div>
-                                                </div>
-                                                </div>
-                                            </div>
-
-                                            <?php }?>
-                                        
-                                        </tbody>
-                                    </table>
-                                    
-                                </div> <!-- end card body-->
-                            </div> <!-- end card -->
-                        </div><!-- end col-->
-                    </div>
+                        
                     <!-- end row-->
 
 
