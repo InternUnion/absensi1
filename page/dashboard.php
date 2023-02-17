@@ -6,14 +6,14 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>ARAK Dashboard</title>
+        <title>ARAK - Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="MyraStudio" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="../img/logo.jpg">
+        <link rel="shortcut icon" href="../img/image.png">
 
         <!--calendar css-->
         <link href="../template/Admin/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
@@ -160,6 +160,27 @@
                         </div>     
                         <!-- end page title -->
     
+
+    <?php
+
+        include_once("../configure/connection.php");
+
+        // Karyawan
+        $result = mysqli_query($db, "SELECT count(id_karyawan) as 'totalkaryawan' FROM karyawan;");
+        $i = 1;
+        while($user_data = mysqli_fetch_array($result))
+        {
+        $totalkaryawan = $user_data['totalkaryawan'];
+        }
+
+        // Jabatan
+        $result = mysqli_query($db, "SELECT count(id) as 'totaljabatan' FROM jabatan;");
+        $i = 1;
+        while($user_data = mysqli_fetch_array($result))
+        {
+        $totaljabatan = $user_data['totaljabatan'];
+        }
+    ?>
                         <div class="row">
                             <div class="col-md-6 col-xl-3">
                                 <div class="card">
@@ -170,7 +191,7 @@
                                         <div class="row d-flex align-items-center mb-4">
                                             <div class="col-8">
                                                 <h2 class="d-flex align-items-center mb-0">
-                                                    $17.21
+                                                    <?php echo $totalkaryawan?> Karyawan
                                                 </h2>
                                             </div>
                                         </div>
@@ -188,12 +209,12 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="mb-4">
-                                            <h5 class="card-title mb-0">Data Jabatannn</h5>
+                                            <h5 class="card-title mb-0">Data Jabatan</h5>
                                         </div>
                                         <div class="row d-flex align-items-center mb-4">
                                             <div class="col-8">
                                                 <h2 class="d-flex align-items-center mb-0">
-                                                    $784.62
+                                                    <?php echo $totaljabatan?> Jabatan
                                                 </h2>
                                             </div>
                                         </div>
