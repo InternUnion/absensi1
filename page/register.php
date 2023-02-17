@@ -50,7 +50,52 @@
                                                 <label>Password</label>
                                                 <input class="form-control" type="password" placeholder="Insert Password" name="password">
                                                 <br>
+                                                <label>Employee Name</label>
+                                                <input class="form-control" type="text" placeholder="Insert Name" name="name">
+                                                <br>
+                                                <label>Date Of Birth</label>
+                                                <input class="form-control" type="date" placeholder="Insert Date Of Birth" name="tgllhr">
+                                                <br>
+                                                <label>Gender</label>
+                                                <select class="form-control" name="jeniskelamin" data-toggle="select2">
+                                                    <option>-- Select --</option>
+                                                    <optgroup label="Gender">
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                    </optgroup>
+                                                </select>
+                                                <br>
+                                                <label>Address</label>
+                                                <input class="form-control" type="text" placeholder="Insert Address" name="alamat">
+                                                <br>
+                                                <label>Phone Number</label>
+                                                <input class="form-control" type="text" placeholder="Insert Phone Number" name="notelp">
+                                                <br>
+                                                <label>Position</label>
+                                                <select class="form-control" data-toggle="select2" name="jabatan">
+                                                    <option>-- Select --</option>
+                                                    <optgroup label="Position">
+                                                        <option value="CEO">CEO</option>
+                                                        <option value="HRD">HRD</option>
+                                                        <option value="CTO">CTO</option>
+                                                        <option value="Office Boy">Office Boy</option>
+                                                        <option value="Programmer">Programmer</option>
+                                                        <option value="Manager">Manager</option>
+                                                        <option value="IT">IT</option>
+                                                    </optgroup>
+                                                </select>
+                                                <br>
+                                                <label>Level</label>
+                                                <select class="form-control" data-toggle="select2" name="tingkatan">
+                                                    <option>-- Select --</option>
+                                                    <optgroup label="Level">
+                                                        <option value="admin">Admin</option>
+                                                        <option value="karyawan">Karyawan</option>
+                                                    </optgroup>
+                                                </select>
+                                                <br>
                                                 <input class="btn btn-primary btn-block" type="submit" value="Register" name="register">
+                                                <a href="login.php" class="btn btn-danger btn-block" type="button" >Back</a>
                                             </div>
                                             </form>
     
@@ -77,6 +122,13 @@
 
             $username = $_POST['username'];
             $password = $_POST['password'];
+            $namakaryawan = $_POST['name'];
+            $tanggallahir = $_POST['tgllhr'];
+            $jenkel = $_POST['jeniskelamin'];
+            $address = $_POST['alamat'];
+            $notelepon = $_POST['notelp'];
+            $position = $_POST['jabatan'];
+            $level = $_POST['tingkatan'];
     
             // include database connection file
             include_once("../configure/connection.php");
@@ -84,7 +136,7 @@
             // Insert user data into table
     
         try { 
-           $query = "INSERT INTO users (username, password) VALUES('$username','$password')";
+           $query = "INSERT INTO karyawan (username, password, nama, tgl_lhr, jenkel, alamat, no_tel,jabatan, level) VALUES('$username','$password','$namakaryawan','$tanggallahir','$jenkel','$address','$notelepon','$position','$level')";
            $result = mysqli_query($db, $query); 
        } catch (mysqli_sql_exception $e) { 
           var_dump($e);
