@@ -178,7 +178,67 @@
                             </div>
                         </div>
 
+                        <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="card-title">Data Absen</h4>
+                                <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Id Absen</th>
+                                            <th>Id Karyawan</th>
+                                            <th>Nama</th>
+                                            <th>Waktu Masuk</th>
+                                            <th>Waktu Keluar</th>
+                                            <th>Tanggal</th>
+                                        </tr>
+                                    </thead>
+                                
+                                
+                                    <tbody>
+                                                                
+                                    <?php
+
+                                    include_once("../Configure/connection.php");
+                                    $i = 0;
+                                    $result = mysqli_query($db, "select * from absen");
+                                    while($dataabsen = mysqli_fetch_array($result)) {
+                                    $i++;
+                                    
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $i;?></td>
+                                            <td><?php echo $dataabsen['id_absen'];?></td>
+                                            <td><?php echo $dataabsen['id_karyawan'];?></td>
+                                            <td><?php echo $dataabsen['nama'];?></td>
+                                            <td><?php echo $dataabsen['waktu_masuk'];?></td>
+                                            <td><?php echo $dataabsen['waktu_keluar'];?></td>
+                                            <td><?php echo $dataabsen['date'];?></td>
+                                        </tr>
+                            </div>
+                        </div>
+                                    <?php 
+                                        }
+                                    ?>
+
+                                        </tbody>
+                                    </table>
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div>
+                    <!-- end row-->
+
+
                         
+                    </div> <!-- container-fluid -->
+
+                    
+
+                </div>
                         <!-- end row-->
 
 
