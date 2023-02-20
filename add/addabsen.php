@@ -194,6 +194,7 @@ $level = $_SESSION['level'];
                                                 <th>Id Karyawan</th>
                                                 <th>Nama</th>
                                                 <th>Waktu Masuk</th>
+                                                <th>Waktu Keluar</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -216,6 +217,7 @@ $level = $_SESSION['level'];
                                                     <td><?php echo $dataabsen['id_karyawan']; ?></td>
                                                     <td><?php echo $dataabsen['nama']; ?></td>
                                                     <td><?php echo $dataabsen['clock_in']; ?></td>
+                                                    <td><?php echo $dataabsen['clock_out']; ?></td>
                                                     <td></td>
                                                 </tr>
                                 </div>

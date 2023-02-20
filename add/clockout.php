@@ -139,7 +139,7 @@
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="topnav-pages">
                                             <a href="clockin.php" class="dropdown-item">Clock In</a>
-                                            <a href="clockout.php" class="dropdown-item">Clock Out</a>
+                                            <a href="#" class="dropdown-item">Clock Out</a>
                                             <a href="addabsen.php" class="dropdown-item">Table Absen</a>
                                         </div>
                                     </li>
@@ -171,7 +171,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0 font-size-100">Clock In</h4>
+                                    <h4 class="mb-0 font-size-100">Clock Out</h4>
     
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
@@ -193,20 +193,20 @@
                                         <h4 class="card-title">Clock In</h4>
                                         <p class="card-subtitle mb-4">Absent please !!</p>
     
-                                        <form method="POST" action="absen_sv.php">
+                                        <form method="POST" action="absen_sv2.php">
                                         <div class="form-group" method="POST">
                                             <div class="form-group">
                                                 <label>Employee Id</label>
-                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $idusers ?>" name="idkaryawan" readonly>
+                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $idusers ?>" name="idkaryawan1" readonly>
                                                 <br>
                                                 <label>Employee Name</label>
-                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $username ?>" name="namakaryawan" readonly>
+                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $username ?>" name="namakaryawan1" readonly>
                                                 <br>
                                                 <label>Date Time</label>
-                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo date('l, d-m-Y h:i:s a' );?>" name="datetime" readonly>
+                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo date('l, d-m-Y h:i:s a' );?>" name="datetime1" readonly>
                                             </div>
 
-                                            <input class="btn btn-primary btn-block" type="submit" value="Absen" name="clockin">
+                                            <input class="btn btn-primary btn-block" type="submit" value="Add" name="clockout">
                                         </form>
                                     </div>
                                     <!-- end card-body-->
