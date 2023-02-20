@@ -190,7 +190,7 @@
 
                         <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Clock In</h4>
+                                        <h4 class="card-title">Clock Out</h4>
                                         <p class="card-subtitle mb-4">Absent please !!</p>
     
                                         <form method="POST" action="absen_sv2.php">
