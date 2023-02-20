@@ -213,33 +213,6 @@
                                 </div>     
                         <!-- end page title -->    
                         </div>
-
-                        <?php
-                            if(isset($_POST['addjabatan'])) {
-                            $jabatan = $_POST['jabatan'];
-
-                            // include database connection file
-                            include_once("../Configure/connection.php");
-
-                            // Insert user data into table
-
-                            try { 
-                                $query = "INSERT INTO jabatan(jabatan_karyawan) VALUES('$jabatan')";
-                                $result = mysqli_query($db, $query); 
-                            } catch (mysqli_sql_exception $e) { 
-                                var_dump($e);
-                                exit; 
-                            } 
-                            echo "<script>Swal.fire({
-                            title: 'Success!',
-                            text: 'Successfully add Position',
-                            icon: 'success',
-                            confirmButtonText: 'Cool!'
-                            })</script>";
-                            }
-
-                        ?>
-
                         
                         <!-- end row-->
 
