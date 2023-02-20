@@ -4,11 +4,12 @@
         $idkaryawan = $_POST['idkaryawan'];
         $nama = $_POST['namakaryawan'];
         $waktu = $_POST['datetime'];
+        $waktuout = $_POST['datetime1'];
 
 
     }
 
-    $save = "INSERT INTO absen SET id_karyawan='$idkaryawan', nama='$nama', clock_in='$waktu'";
+    $save = "INSERT INTO absen SET id_karyawan='$idkaryawan', nama='$nama', clock_in='$waktu', clock_out='$waktuout'";
     mysqli_query($db, $save);
 
     if ($save) {

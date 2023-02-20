@@ -204,9 +204,10 @@
                                                 <br>
                                                 <label>Date Time</label>
                                                 <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo date('l, d-m-Y h:i:s a' );?>" name="datetime" readonly>
+                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="" name="datetime1" hidden>
                                             </div>
 
-                                            <input class="btn btn-primary btn-block" type="submit" value="Absen" name="clockin">
+                                            <input class="btn btn-primary btn-block" type="submit" value="Absen Masuk" name="clockin">
                                         </form>
                                     </div>
                                     <!-- end card-body-->

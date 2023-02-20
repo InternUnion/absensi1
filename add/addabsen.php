@@ -136,7 +136,7 @@ $level = $_SESSION['level'];
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="topnav-pages">
                                         <a href="clockin.php" class="dropdown-item">Clock In</a>
-                                        <a href="#" class="dropdown-item">Clock Out</a>
+                                        <a href="clockout.php" class="dropdown-item">Clock Out</a>
                                         <a href="addabsen.php" class="dropdown-item">Table Absen</a>
                                     </div>
                                 </li>
