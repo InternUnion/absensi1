@@ -130,9 +130,14 @@
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="../add/addabsen.php" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-calendar-multiple-check"></i>Data Absen
+                                        <a class="nav-link dropdown-toggle arrow-none" href="../add/addabsen.php" id="topnav-pages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-calendar-multiple-check"></i>Data Absen <div class="arrow-down"></div>
                                         </a>
+                                        <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                                            <a href="../add/clockin.php" class="dropdown-item">Clock In</a>
+                                            <a href="#" class="dropdown-item">Clock Out</a>
+                                            <a href="../add/addabsen.php" class="dropdown-item">Table Absen</a>
+                                        </div>
                                     </li>
 
                                     <li class="nav-item dropdown">
