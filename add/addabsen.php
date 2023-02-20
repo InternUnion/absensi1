@@ -129,12 +129,16 @@ $level = $_SESSION['level'];
                                         <i class="mdi mdi-finance"></i>Data Jabatan
                                     </a>
                                 </li>
-
+                                
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link active" href="../add/addabsen.php" aria-haspopup="true" aria-expanded="false">
-                                        <i class="mdi mdi-calendar-multiple-check"></i>Data Absen
-                                    </a>
-                                </li>
+                                        <a class="nav-link dropdown-toggle arrow-none" href="addabsen.php" id="topnav-pages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-calendar-multiple-check"></i>Data Absen <div class="arrow-down"></div>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                                            <a href="#" class="dropdown-item">Clock In</a>
+                                            <a href="#" class="dropdown-item">Clock Out</a>
+                                        </div>
+                                    </li>
 
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
