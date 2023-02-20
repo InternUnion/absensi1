@@ -215,7 +215,7 @@ $level = $_SESSION['level'];
                                                     <td><?php echo $dataabsen['id_absen']; ?></td>
                                                     <td><?php echo $dataabsen['id_karyawan']; ?></td>
                                                     <td><?php echo $dataabsen['nama']; ?></td>
-                                                    <td><?php echo $dataabsen['clock in']; ?></td>
+                                                    <td><?php echo $dataabsen['clock_in']; ?></td>
                                                     <td></td>
                                                 </tr>
                                 </div>
