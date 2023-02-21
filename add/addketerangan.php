@@ -137,6 +137,7 @@ $level = $_SESSION['level'];
                                                 <th>Alasan</th>
                                                 <th>Tanggal</th>
                                                 <th>Action</th>
+                                                <th>Bukti</th>
                                             </tr>
                                         </thead>
 
@@ -159,7 +160,8 @@ $level = $_SESSION['level'];
                                                     <td><?php echo $dataketerangan['keterangan']; ?></td>
                                                     <td><?php echo $dataketerangan['alasan']; ?></td>
                                                     <td><?php echo $dataketerangan['waktu']; ?></td>
-                                                    <td><a href="../hapus/hapusketerangan.php?id_keterangan=<?php echo $dataketerangan['id_keterangan'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a></center></td></td>
+                                                    <td><a href="../hapus/hapusketerangan.php?id_keterangan=<?php echo $dataketerangan['id_keterangan'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a></center></td>
+                                                    <td><img src="<?php echo $dataketerangan['bukti']?>" alt="" width="40px" height="40px"></td>
                                                 </tr>
                                 </div>
                             </div>

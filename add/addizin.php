@@ -146,7 +146,7 @@
                                         <h4 class="card-title">Clock In</h4>
                                         <p class="card-subtitle mb-4">Absent please !!</p>
     
-                                        <form method="POST" action="addizin.php">
+                                        <form method="POST" action="addizin.php" enctype="multipart/form-data">
                                         <div class="form-group" method="POST">
                                             <div class="form-group">
                                                 <label>Information Id</label>
@@ -176,7 +176,7 @@
                                                 <label>Photo Evidence</label>
                                                 <div class="card-body" required name="fotobukti">
                                                     <p class="card-subtitle mb-4">Insert Your Photo Evidence.</p>
-                                                    <input type="file" class="dropify" data-max-file-size="1M" />
+                                                    <input type="file" name="bukti" class="dropify" data-max-file-size="1M" />
                                                 </div>
                                             </div>
                                             </div>
@@ -187,6 +187,7 @@
                                     </div>
                                     
                                     <?php
+                                    include_once("../Configure/connection.php");
                                     if(isset($_POST['addizin'])) {
 
 
@@ -196,15 +197,16 @@
                                         $information = $_POST['informasi'];
                                         $reason = $_POST['alasan'];
                                         $date = $_POST['tanggal'];
-                                        $photo = $_POST['fotobukti'];
-                                
-                                        // include database connection file
-                                        include_once("../Configure/connection.php");
-                                
-                                        // Insert user data into table
-                                
+
+                                        //untuk gambar
+                                        $bukti = $_FILES['bukti']['name'];
+                                        $tmp = $_FILES['bukti']['tmp_name'];
+                                        $buktibaru = date('dmYHis').$bukti;
+                                        $path = "img/".$buktibaru;
+                                        
                                     try { 
-                                    $query = "INSERT INTO keterangan(id_keterangan,id_karyawan,nama,keterangan,alasan,waktu,bukti) VALUES('$idketerangan','$idkaryawan','$namakaryawan','$information','$reason','$date','$photo')";
+                                    move_uploaded_file($tmp, $path);
+                                    $query = "INSERT INTO keterangan(id_keterangan,id_karyawan,nama,keterangan,alasan,waktu,bukti) VALUES('$idketerangan','$idkaryawan','$namakaryawan','$information','$reason','$date','$path')";
                                     $result = mysqli_query($db, $query); 
                                     } catch (mysqli_sql_exception $e) { 
                                         var_dump($e);
