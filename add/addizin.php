@@ -182,7 +182,7 @@
                                             </div>
 
                                             <input class="btn btn-primary btn-block" type="submit" value="Submit" name="addizin">
-                                            <a class="btn btn-danger btn-block" type="button" href="clockin.php">Return</a>
+                                            <a class="btn btn-danger btn-block" type="button" href="clockin.php">Titit</a>
                                         </form>
                                     </div>
                                     
@@ -203,7 +203,7 @@
                                         $tmp = $_FILES['bukti']['tmp_name'];
                                         $buktibaru = date('dmYHis').$bukti;
                                         $path = "img/".$buktibaru;
-                                        
+
                                     try { 
                                     move_uploaded_file($tmp, $path);
                                     $query = "INSERT INTO keterangan(id_keterangan,id_karyawan,nama,keterangan,alasan,waktu,bukti) VALUES('$idketerangan','$idkaryawan','$namakaryawan','$information','$reason','$date','$path')";
