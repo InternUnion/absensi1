@@ -182,7 +182,7 @@
                                             </div>
 
                                             <input class="btn btn-primary btn-block" type="submit" value="Submit" name="addizin">
-                                            <a class="btn btn-danger btn-block" type="button" href="clockin.php">Titit</a>
+                                            <a class="btn btn-danger btn-block" type="button" href="clockin.php">Cancel</a>
                                         </form>
                                     </div>
                                     
