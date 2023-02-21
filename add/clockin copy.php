@@ -9,7 +9,6 @@
         $idusers = $_SESSION['id_karyawan'];
         $username = $_SESSION['username'];
         $level = $_SESSION['level'];
-        $id_absen = $_GET['id_absen'];
 
     ?>
     <head>
@@ -94,7 +93,7 @@
                     include('../page/menu/karyawan.php');
                 }
                 
-                ?>              
+                ?>                
 
                 <?php
 
@@ -111,7 +110,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0 font-size-100">Clock Out</h4>
+                                    <h4 class="mb-0 font-size-100">Clock In</h4>
     
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
@@ -130,25 +129,24 @@
 
                         <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Clock Out</h4>
+                                        <h4 class="card-title">Clock In</h4>
                                         <p class="card-subtitle mb-4">Absent please !!</p>
     
-                                        <form method="POST" action="absen_sv2.php">
+                                        <form method="POST" action="absen_sv.php">
                                         <div class="form-group" method="POST">
                                             <div class="form-group">
                                                 <label>Employee Id</label>
-                                                <input type="text" class="form-control"  value="<?php echo $id_absen ?>" name="idabsen" hidden>
-                                               
-                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $idusers ?>" name="idkaryawan1" readonly>
+                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $idusers ?>" name="idkaryawan" readonly>
                                                 <br>
                                                 <label>Employee Name</label>
-                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $username ?>" name="namakaryawan1" readonly>
+                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $username ?>" name="namakaryawan" readonly>
                                                 <br>
                                                 <label>Date Time</label>
-                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo date('l, d-m-Y h:i:s a' );?>" name="datetime1" readonly>
+                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo date('l, d-m-Y h:i:s a' );?>" name="datetime" readonly>
                                             </div>
 
-                                            <input class="btn btn-primary btn-block" type="submit" value="Absen Keluar" name="clockout">
+                                            <input class="btn btn-primary btn-block" type="submit" value="Absen Masuk" name="clockin">
+                                            <a class="btn btn-warning btn-block" type="button" href="addizin.php">Klik Ini Jika Kamu Tidak Masuk</a>
                                         </form>
                                     </div>
                                     <!-- end card-body-->
@@ -227,16 +225,13 @@
     <script src="../template/Admin/plugins/datatables/dataTables.select.min.js"></script>
     <script src="../template/Admin/plugins/datatables/pdfmake.min.js"></script>
     <script src="../template/Admin/plugins/datatables/vfs_fonts.js"></script>
-    <!-- third party js ends -->
 
     <!-- Datatables init -->
     <script src="../template/admin/horizontal/assets/pages/datatables-demo.js"></script>
 
     <!-- App js -->
     <script src="../template/admin/horizontal/assets/js/theme.js"></script>
-
-
-        <script src="../template/Admin/horizontal/assets/js/theme.js"></script>
+    <script src="../template/Admin/horizontal/assets/js/theme.js"></script>
 
     </body>
 

@@ -101,7 +101,7 @@
 
                 // Fetch all users data from database
                 $result = mysqli_query($db, "select * from absen");
-
+                
                 ?>
 
                 <div class="page-content">
@@ -148,6 +148,7 @@
                                             <input class="btn btn-primary btn-block" type="submit" value="Absen Masuk" name="clockin">
                                             <a class="btn btn-warning btn-block" type="button" href="addizin.php">Klik Ini Jika Kamu Tidak Masuk</a>
                                         </form>
+                                            <!-- <a href="clockin.php?id_absen=<?php echo $idusers?>" class="btn btn-danger btn-block" type="submit" name="clockout">Absen Keluar</a> -->
                                     </div>
                                     <!-- end card-body-->
                                 </div>     

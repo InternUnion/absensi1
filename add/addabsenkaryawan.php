@@ -147,7 +147,7 @@ $level = $_SESSION['level'];
 
                                             include_once("../Configure/connection.php");
                                             $i = 0;
-                                            $result = mysqli_query($db, "select * from absen");
+                                            $result = mysqli_query($db, "select * from absen where id_karyawan='$idusers'");
                                             while ($dataabsen = mysqli_fetch_array($result)) {
                                                 $i++;
 
@@ -159,7 +159,7 @@ $level = $_SESSION['level'];
                                                     <td><?php echo $dataabsen['nama']; ?></td>
                                                     <td><?php echo $dataabsen['clock_in']; ?></td>
                                                     <td><?php echo $dataabsen['clock_out']; ?></td>
-                                                    <td><a href="../hapus/hapusabsen.php?id_absen=<?php echo $dataabsen['id_absen'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a></center></td></td>
+                                                    <td><a href="../hapus/hapusabsen.php?id_absen=<?php echo $dataabsen['id_absen'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a>||<a href="clockout.php?id_absen=<?php echo $dataabsen['id_absen'];?>" class="btn btn-warning" ><i class="fas fa-clock"></i></a></center></td></td>
                                                 </tr>
                                 </div>
                             </div>
