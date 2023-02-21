@@ -22,6 +22,9 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="../img/image.png">
 
+        <!-- Dropify css -->
+        <link href="../template/Admin/plugins/dropify/dropify.min.css" rel="stylesheet" type="text/css" />
+
         <!-- App css -->
         <link href="../template/Admin/horizontal/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="../template/Admin/horizontal/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -127,29 +130,96 @@
                             date_default_timezone_get();
                         ?>
 
-                        <div class="card">
+                        <?php
+                            include_once("../Configure/connection.php");
+                            $maxid = mysqli_query($db,"select max(id_keterangan) as 'idketerangan1' from keterangan");
+                            
+                            while($result1 = mysqli_fetch_array($maxid)){
+                                $idterakhir  = $result1['idketerangan1'];
+                                $tambahid = $idterakhir+1;
+                        }
+
+                        ?>
+
+                                <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Clock In</h4>
                                         <p class="card-subtitle mb-4">Absent please !!</p>
     
-                                        <form method="POST" action="absen_sv.php">
+                                        <form method="POST" action="addizin.php">
                                         <div class="form-group" method="POST">
                                             <div class="form-group">
+                                                <label>Information Id</label>
+                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $tambahid?>" name="idketerangan" readonly>
+                                                <br>
                                                 <label>Employee Id</label>
                                                 <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $idusers ?>" name="idkaryawan" readonly>
                                                 <br>
                                                 <label>Employee Name</label>
                                                 <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $username ?>" name="namakaryawan" readonly>
                                                 <br>
-                                                <label>Date Time</label>
-                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo date('l, d-m-Y h:i:s a' );?>" name="datetime" readonly>
+                                                <label>Information</label>
+                                                <select class="form-control" data-toggle="select2" name="informasi" required>
+                                                    <option>-- Select --</option>
+                                                    <optgroup label="Information">
+                                                        <option value="Sakit">Sakit</option>
+                                                        <option value="Izin">Izin</option>
+                                                    </optgroup>
+                                                </select>
+                                                <br>
+                                                <label>Reason</label>
+                                                <input type="text" class="form-control" placeholder="Insert Your Reason" name="alasan" required>
+                                                <br>
+                                                <label>Date</label>
+                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo date('l, d-m-Y' );?>" name="tanggal" readonly>
+                                                <br>
+                                                <label>Photo Evidence</label>
+                                                <div class="card-body" required name="fotobukti">
+                                                    <p class="card-subtitle mb-4">Insert Your Photo Evidence.</p>
+                                                    <input type="file" class="dropify" data-max-file-size="1M" />
+                                                </div>
+                                            </div>
                                             </div>
 
-                                            <input class="btn btn-primary btn-block" type="submit" value="Absen Masuk" name="clockin">
-                                            <a class="btn btn-warning btn-block" type="button" href="addizin.php">Klik Ini Jika Kamu Tidak Masuk</a>
+                                            <input class="btn btn-primary btn-block" type="submit" value="Submit" name="addizin">
+                                            <a class="btn btn-danger btn-block" type="button" href="clockin.php">Return</a>
                                         </form>
                                     </div>
-                                    <!-- end card-body-->
+                                    
+                                    <?php
+                                    if(isset($_POST['addizin'])) {
+
+
+                                        $idketerangan = $_POST['idketerangan'];
+                                        $idkaryawan = $_POST['idkaryawan'];
+                                        $namakaryawan = $_POST['namakaryawan'];
+                                        $information = $_POST['informasi'];
+                                        $reason = $_POST['alasan'];
+                                        $date = $_POST['tanggal'];
+                                        $photo = $_POST['fotobukti'];
+                                
+                                        // include database connection file
+                                        include_once("../Configure/connection.php");
+                                
+                                        // Insert user data into table
+                                
+                                    try { 
+                                    $query = "INSERT INTO keterangan(id_keterangan,id_karyawan,nama,keterangan,alasan,waktu,bukti) VALUES('$idketerangan','$idkaryawan','$namakaryawan','$information','$reason','$date','$photo')";
+                                    $result = mysqli_query($db, $query); 
+                                    } catch (mysqli_sql_exception $e) { 
+                                        var_dump($e);
+                                        exit; 
+                                    } 
+                                    echo "<script>Swal.fire({
+                                        title: 'Success!',
+                                        text: 'Successfully add Izin',
+                                        icon: 'success',
+                                        confirmButtonText: 'Cool!'
+                                        })</script>";
+                                        }
+                                    
+                                    ?>
+
                                 </div>     
                         <!-- end page title -->    
                         </div>
@@ -171,7 +241,6 @@
 
                     
 
-                </div>
                 <!-- End Page-content -->
 
 
@@ -205,17 +274,11 @@
 
         
     <!-- jQuery  -->
+    <script src="../template/admin/horizontal/assets/js/metismenu.min.js"></script>
     <script src="../template/admin/horizontal/assets/js/jquery.min.js"></script>
     <script src="../template/admin/horizontal/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../template/admin/horizontal/assets/js/metismenu.min.js"></script>
     <script src="../template/admin/horizontal/assets/js/waves.js"></script>
     <script src="../template/admin/horizontal/assets/js/simplebar.min.js"></script>
-
-    <!--dropify-->
-    <script src="../template/Admin/plugins/dropify/dropify.min.js"></script>
-
-    <!-- Init js-->
-    <script src="../template/admin/horizontal/assets/pages/fileuploads-demo.js"></script>
 
     <!-- third party js -->
     <script src="../template/Admin/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -231,12 +294,12 @@
     <script src="../template/Admin/plugins/datatables/dataTables.select.min.js"></script>
     <script src="../template/Admin/plugins/datatables/pdfmake.min.js"></script>
     <script src="../template/Admin/plugins/datatables/vfs_fonts.js"></script>
+    <!-- third party js ends -->
 
     <!-- Datatables init -->
     <script src="../template/admin/horizontal/assets/pages/datatables-demo.js"></script>
 
     <!-- App js -->
-    <script src="../template/admin/horizontal/assets/js/theme.js"></script>
     <script src="../template/Admin/horizontal/assets/js/theme.js"></script>
 
     </body>
