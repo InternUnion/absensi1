@@ -14,7 +14,7 @@
 
     if ($save) {
         echo "<script>alert('Anda sudah absen untuk hari ini') </script>";
-        echo "<script>window.location.href = \"addabsen.php\" </script>";	
+        echo "<script>window.location.href = \"clockin.php\" </script>";	
     }else{
         echo "kryptosssss";
     }

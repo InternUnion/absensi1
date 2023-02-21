@@ -13,7 +13,7 @@
 
     if ($update) {
         echo "<script>alert('Anda sudah absen keluar untuk hari ini') </script>";
-        echo "<script>window.location.href = \"addabsen.php\" </script>";	
+        echo "<script>window.location.href = \"clockout.php\" </script>";	
     }else{
         echo "kryptosssss";
     }

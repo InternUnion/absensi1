@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-111283-0.cloudclusters.net:19688
--- Waktu pembuatan: 17 Feb 2023 pada 10.14
--- Versi server: 8.0.26
--- Versi PHP: 7.2.34
+-- Generation Time: Feb 21, 2023 at 03:36 AM
+-- Server version: 8.0.26
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,30 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `absen`
+-- Table structure for table `absen`
 --
 
 CREATE TABLE `absen` (
   `id_absen` int NOT NULL,
-  `id_karyawan` varchar(255) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `waktu_masuk` time NOT NULL,
-  `waktu_keluar` time NOT NULL,
-  `date` date NOT NULL
+  `id_karyawan` int NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `clock_in` varchar(100) NOT NULL,
+  `clock_out` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data untuk tabel `absen`
+-- Dumping data for table `absen`
 --
 
-INSERT INTO `absen` (`id_absen`, `id_karyawan`, `nama`, `waktu_masuk`, `waktu_keluar`, `date`) VALUES
-(2, '3', 'Adam Muafa', '10:00:00', '18:00:00', '2023-02-17'),
-(3, '2', 'Allea Rakha', '10:00:00', '18:00:00', '2023-02-17');
+INSERT INTO `absen` (`id_absen`, `id_karyawan`, `nama`, `clock_in`, `clock_out`) VALUES
+(1, 2, 'Allea Rakha Mahardhika', 'Monday, 20-02-2023 11:13:34 am', ''),
+(2, 4, 'Rakha', 'Monday, 20-02-2023 11:51:36 am', 'Monday, 20-02-2023 01:16:57 pm'),
+(3, 17, 'Masbro', 'Monday, 20-02-2023 12:53:51 pm', 'Monday, 20-02-2023 01:20:30 pm'),
+(4, 6, 'edi sukadi', 'Monday, 20-02-2023 01:42:09 pm', 'Monday, 20-02-2023 01:45:19 pm'),
+(8, 19, 'Tartaglia', 'Monday, 20-02-2023 02:12:32 pm', 'Monday, 20-02-2023 02:12:46 pm');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jabatan`
+-- Table structure for table `jabatan`
 --
 
 CREATE TABLE `jabatan` (
@@ -57,7 +59,7 @@ CREATE TABLE `jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data untuk tabel `jabatan`
+-- Dumping data for table `jabatan`
 --
 
 INSERT INTO `jabatan` (`id`, `jabatan_karyawan`) VALUES
@@ -72,7 +74,7 @@ INSERT INTO `jabatan` (`id`, `jabatan_karyawan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `karyawan`
+-- Table structure for table `karyawan`
 --
 
 CREATE TABLE `karyawan` (
@@ -89,7 +91,7 @@ CREATE TABLE `karyawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data untuk tabel `karyawan`
+-- Dumping data for table `karyawan`
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `username`, `password`, `nama`, `tgl_lhr`, `jenkel`, `alamat`, `no_tel`, `jabatan`, `level`) VALUES
@@ -98,51 +100,53 @@ INSERT INTO `karyawan` (`id_karyawan`, `username`, `password`, `nama`, `tgl_lhr`
 (4, 'hiken', '123456', 'Rakha', '2005-02-08', 'Male', 'Jl.Palem 1', '089590908080', 'CEO', 'admin'),
 (5, 'aji', '123456', 'aji suparji', '1996-09-16', 'Male', 'JL.palem 1', '0895049030', 'CEO', 'admin'),
 (6, 'edi ', '123456', 'edi sukadi', '2003-11-18', 'Male', 'JL.palem 1', '0895049030', 'CEO', 'karyawan'),
-(17, 'Masbro Ganteng', 'masbro123', 'Masbro', '2023-02-17', 'Female', 'Jember Utara', '08128182182121', 'Office Boy', 'karyawan');
+(17, 'Masbro Ganteng', 'masbro123', 'Masbro', '2023-02-17', 'Female', 'Jember Utara', '08128182182121', 'Office Boy', 'karyawan'),
+(18, 'hello', 'hello', 'hello', '2023-02-01', 'Male', 'hello', '0321312', 'CEO', 'karyawan'),
+(19, 'Tatang', '123456', 'Tartaglia', '2000-01-19', 'Male', 'Snezhnaya', '0895049030', 'CEO', 'karyawan');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `absen`
+-- Indexes for table `absen`
 --
 ALTER TABLE `absen`
   ADD PRIMARY KEY (`id_absen`);
 
 --
--- Indeks untuk tabel `jabatan`
+-- Indexes for table `jabatan`
 --
 ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `karyawan`
+-- Indexes for table `karyawan`
 --
 ALTER TABLE `karyawan`
   ADD PRIMARY KEY (`id_karyawan`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `absen`
+-- AUTO_INCREMENT for table `absen`
 --
 ALTER TABLE `absen`
-  MODIFY `id_absen` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_absen` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `jabatan`
+-- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `karyawan`
+-- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_karyawan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
