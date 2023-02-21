@@ -211,12 +211,6 @@
     <script src="../template/admin/horizontal/assets/js/waves.js"></script>
     <script src="../template/admin/horizontal/assets/js/simplebar.min.js"></script>
 
-    <!--dropify-->
-    <script src="../template/Admin/plugins/dropify/dropify.min.js"></script>
-
-    <!-- Init js-->
-    <script src="../template/admin/horizontal/assets/pages/fileuploads-demo.js"></script>
-
     <!-- third party js -->
     <script src="../template/Admin/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="../template/Admin/plugins/datatables/dataTables.bootstrap4.js"></script>
