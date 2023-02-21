@@ -4,7 +4,7 @@
         $idkaryawan = $_POST['idkaryawan'];
         $nama = $_POST['namakaryawan'];
         $waktu = $_POST['datetime'];
-        $waktuout = $_POST['datetime1'];
+        $waktuout = 'null';
 
 
     }
