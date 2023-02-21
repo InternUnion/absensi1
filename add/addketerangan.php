@@ -161,7 +161,7 @@ $level = $_SESSION['level'];
                                                     <td><?php echo $dataketerangan['alasan']; ?></td>
                                                     <td><?php echo $dataketerangan['waktu']; ?></td>
                                                     <td><a href="../hapus/hapusketerangan.php?id_keterangan=<?php echo $dataketerangan['id_keterangan'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a></center></td>
-                                                    <td><img src="<?php echo $dataketerangan['bukti']?>" alt="" width="40px" height="40px"></td>
+                                                    <td><a href="<?php echo $dataketerangan['bukti']?>"><img src="<?php echo $dataketerangan['bukti']?>" alt="" width="35px"></td>
                                                 </tr>
                                 </div>
                             </div>
