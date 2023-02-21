@@ -110,28 +110,26 @@
                             </div>
                         </div>     
                         <!-- end page title -->
-    
+                        <?php
 
-    <?php
+                            include_once("../configure/connection.php");
 
-        include_once("../configure/connection.php");
+                            // Karyawan
+                            $result = mysqli_query($db, "SELECT count(id_karyawan) as 'totalkaryawan' FROM karyawan;");
+                            $i = 1;
+                            while($user_data = mysqli_fetch_array($result))
+                            {
+                            $totalkaryawan = $user_data['totalkaryawan'];
+                            }
 
-        // Karyawan
-        $result = mysqli_query($db, "SELECT count(id_karyawan) as 'totalkaryawan' FROM karyawan;");
-        $i = 1;
-        while($user_data = mysqli_fetch_array($result))
-        {
-        $totalkaryawan = $user_data['totalkaryawan'];
-        }
-
-        // Jabatan
-        $result = mysqli_query($db, "SELECT count(id) as 'totaljabatan' FROM jabatan;");
-        $i = 1;
-        while($user_data = mysqli_fetch_array($result))
-        {
-        $totaljabatan = $user_data['totaljabatan'];
-        }
-    ?>
+                            // Jabatan
+                            $result = mysqli_query($db, "SELECT count(id) as 'totaljabatan' FROM jabatan;");
+                            $i = 1;
+                            while($user_data = mysqli_fetch_array($result))
+                            {
+                            $totaljabatan = $user_data['totaljabatan'];
+                            }
+                        ?>
                         <div class="row">
                             <div class="col-md-6 col-xl-3">
                                 <div class="card">
