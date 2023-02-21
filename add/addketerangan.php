@@ -131,11 +131,11 @@ $level = $_SESSION['level'];
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Id Absen</th>
                                                 <th>Id Karyawan</th>
                                                 <th>Nama</th>
-                                                <th>Waktu Masuk</th>
-                                                <th>Waktu Keluar</th>
+                                                <th>Keterangan</th>
+                                                <th>Alasan</th>
+                                                <th>Tanggal</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -147,19 +147,19 @@ $level = $_SESSION['level'];
 
                                             include_once("../Configure/connection.php");
                                             $i = 0;
-                                            $result = mysqli_query($db, "select * from absen");
-                                            while ($dataabsen = mysqli_fetch_array($result)) {
+                                            $result = mysqli_query($db, "select * from keterangan");
+                                            while ($dataketerangan = mysqli_fetch_array($result)) {
                                                 $i++;
 
                                             ?>
                                                 <tr>
                                                     <td><?php echo $i; ?></td>
-                                                    <td><?php echo $dataabsen['id_absen']; ?></td>
-                                                    <td><?php echo $dataabsen['id_karyawan']; ?></td>
-                                                    <td><?php echo $dataabsen['nama']; ?></td>
-                                                    <td><?php echo $dataabsen['clock_in']; ?></td>
-                                                    <td><?php echo $dataabsen['clock_out']; ?></td>
-                                                    <td><a href="../hapus/hapusabsen.php?id_absen=<?php echo $dataabsen['id_absen'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a></center></td></td>
+                                                    <td><?php echo $dataketerangan['id_karyawan']; ?></td>
+                                                    <td><?php echo $dataketerangan['nama']; ?></td>
+                                                    <td><?php echo $dataketerangan['keterangan']; ?></td>
+                                                    <td><?php echo $dataketerangan['alasan']; ?></td>
+                                                    <td><?php echo $dataketerangan['waktu']; ?></td>
+                                                    <td><a href="../hapus/hapusketerangan.php?id_keterangan=<?php echo $dataketerangan['id_keterangan'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a></center></td></td>
                                                 </tr>
                                 </div>
                             </div>
