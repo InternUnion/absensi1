@@ -147,6 +147,7 @@
                                             </div>
 
                                             <input class="btn btn-primary btn-block" type="submit" value="Absen Masuk" name="clockin">
+                                            <a class="btn btn-warning btn-block" type="button" href="addketerangan.php">Klik Ini Jika Kamu Tidak Masuk</a>
                                         </form>
                                     </div>
                                     <!-- end card-body-->
