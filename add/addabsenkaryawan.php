@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once("../Configure/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,9 +20,6 @@ $level = $_SESSION['level'];
     <meta content="MyraStudio" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="../img/image.png">
-
     <!-- App css -->
     <link href="../template/Admin/horizontal/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../template/Admin/horizontal/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -32,6 +30,13 @@ $level = $_SESSION['level'];
     <link href="../template/Admin/plugins/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
     <link href="../template/Admin/plugins/datatables/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
     <link href="../template/Admin/plugins/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
+
+    <link href="../template/Admin/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+    <link href="../template/Admin/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../template/Admin/plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../template/Admin/plugins/switchery/switchery.min.css" rel="stylesheet" type="text/css" />
+    <link href="../template/Admin/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="../template/Admin/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -90,8 +95,6 @@ $level = $_SESSION['level'];
 
             <?php
 
-            include_once("../Configure/connection.php");
-
             // Fetch all users data from database
             $result = mysqli_query($db, "select * from absen");
 
@@ -121,6 +124,23 @@ $level = $_SESSION['level'];
                                 <div class="card-body">
 
                                     <h4 class="card-title">Data Absen</h4>
+                                    <br>
+                                    <form action="" method="post">
+                                        <table>
+                                            <tr>
+                                                <td>Dari Tanggal</td>
+                                                <td><input type="date" name="dari_tgl" required></td>
+                                                <td>Sampai Tanggal</td>
+                                                <td><input type="date" name="sampai_tgl" required></td>
+                                                <td><input type="submit" class="btn btn-primary" name="filter" value="Filter"></td>
+                                            </tr>
+                                        </table>
+                                        <div class="form-group mb-3">
+                                            <label>Date Range</label>
+                                            <input type="text" class="form-control date" id="singledaterange" data-toggle="daterangepicker" data-cancel-class="btn-warning">
+                                        </div>
+                                    </form>
+                                    <br>
                                     <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
                                         <thead>
                                             <tr>
@@ -138,9 +158,15 @@ $level = $_SESSION['level'];
                                         <tbody>
 
                                             <?php
-
-                                            include_once("../Configure/connection.php");
                                             $i = 0;
+
+                                            if(isset($_POST['filter'])){
+                                                $dari_tgl =  $_POST['dari_tgl'];
+                                                $sampai_tgl =  $_POST['sampai_tgl'];
+                                                $result = mysqli_query($db, "select * from absen where date(clock_in) BETWEEN 'date($dari_tgl)' AND 'date($sampai_tgl)'");
+                                            }else{
+                                                $result = mysqli_query($db, "select * from absen ");
+                                            }
                                             $result = mysqli_query($db, "select * from absen where id_karyawan='$idusers'");
                                             while ($dataabsen = mysqli_fetch_array($result)) {
                                                 $i++;
@@ -246,16 +272,29 @@ $level = $_SESSION['level'];
     <script src="../template/Admin/plugins/datatables/dataTables.select.min.js"></script>
     <script src="../template/Admin/plugins/datatables/pdfmake.min.js"></script>
     <script src="../template/Admin/plugins/datatables/vfs_fonts.js"></script>
+
+    
     <!-- third party js ends -->
 
     <!-- Datatables init -->
-    <script src="../template/admin/horizontal/assets/pages/datatables-demo.js"></script>
+    <script src="../template/Admin/horizontal/assets/pages/datatables-demo.js"></script>
 
     <!-- App js -->
-    <script src="../template/admin/horizontal/assets/js/theme.js"></script>
+    <script src="../template/Admin/horizontal/assets/js/theme.js"></script>
 
+    <!-- Plugins js -->
+    <script src="../template/Admin/plugins/autonumeric/autoNumeric-min.js"></script>
+    <script src="../template/Admin/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../template/Admin/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script src="../template/Admin/plugins/moment/moment.js"></script>
+    <script src="../template/Admin/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="../template/Admin/plugins/select2/select2.min.js"></script>
+    <script src="../template/Admin/plugins/switchery/switchery.min.js"></script>
+    <script src="../template/Admin/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="../template/Admin/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
 
     <script src="../template/Admin/horizontal/assets/js/theme.js"></script>
+    <script src="../template/Admin/horizontal/assets/pages/advanced-plugins-demo.js"></script>
 
 </body>
 

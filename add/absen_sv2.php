@@ -9,7 +9,7 @@
 
     }
 
-    $update = "UPDATE `absen` SET `clock_out`= '$waktu1' WHERE id_absen = '$idabsen'";
+    $update = "UPDATE absen SET clock_out= STR_TO_DATE('$waktu1', '%d/%m/%Y %H:%i:%s') WHERE id_absen = '$idabsen'";
     mysqli_query($db, $update);
 
     if ($update) {

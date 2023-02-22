@@ -145,7 +145,7 @@
                                                 <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo $username ?>" name="namakaryawan1" readonly>
                                                 <br>
                                                 <label>Date Time</label>
-                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo date('l, d-m-Y h:i:s a' );?>" name="datetime1" readonly>
+                                                <input type="text" class="form-control" pattern="[A-Za-z]{3}" value="<?php echo date('d/m/Y h:i:s' );?>" name="datetime1" readonly>
                                             </div>
 
                                             <input class="btn btn-primary btn-block" type="submit" value="Absen Keluar" name="clockout">
