@@ -114,7 +114,6 @@
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="topnav-pages">
                                             <a href="clockin.php" class="dropdown-item">Clock In</a>
-                                            <a href="clockout.php" class="dropdown-item">Clock Out</a>
                                             <a href="addabsen.php" class="dropdown-item">Table Absen</a>
                                         </div>
                                     </li>
@@ -170,13 +169,13 @@ $i = 1;
                         }
 
                         ?>  
+                                <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Add Employee</h4>
                                         <p class="card-subtitle mb-4">Insert Employee Data</p>
     
                                         <form method="POST" action="addkaryawan.php">
                                             <div class="form-group" method="POST">
-                                                <div class="container">
                                                 <label>Employee Id</label>
                                                 <input class="form-control" type="text" name="employee_id" value="<?php echo $tambahid?>" readonly>
                                                 <br>
@@ -231,7 +230,7 @@ $i = 1;
                                                 </select>
                                                 <br>
                                                 <input class="btn btn-primary btn-block" type="submit" value="Add" name="Addkaryawan">
-                                            </div>
+                                            
                                             </form>
                                     </div>
                                     <!-- end card-body-->
@@ -326,8 +325,8 @@ $i = 1;
                                             <td><?php echo $datakaryawan['jabatan'];?></td>
                                             <td><?php echo $datakaryawan['level'];?></td>
                                             <td><?php echo $datakaryawan['password'];?></td>
-                                            <td><a  class="btn btn-warning fas fa-wrench" data-toggle="modal" data-backdrop="false" data-target="#modaledit<?php echo $datakaryawan['id_karyawan']; ?>"></a>
-                                            &nbsp
+                                            <td>
+                                            <a class="btn btn-warning fas fa-wrench" data-toggle="modal" data-backdrop="false" data-target="#modaledit<?php echo $datakaryawan['id_karyawan']; ?>"></a>
                                             <a class="btn btn-danger fas fa-trash" href="../hapus/hapuskaryawan.php?id_karyawan=<?php echo $datakaryawan['id_karyawan']; ?>"></a></td>
                                         </tr>
 
@@ -368,8 +367,14 @@ $i = 1;
                                                                         <input type="text" class="form-control" placeholder="Tanggal Lahir" name="tangal_lahir" value="<?php echo $datakaryawan['tgl_lhr']; ?>">
                                                                     </div>
                                                                     <div class="form-group col-md-6">
-                                                                        <label>Jenis Kelamin</label>
-                                                                        <input type="text" class="form-control" placeholder="Password" name="jenkel" value="<?php echo $datakaryawan['jenkel']; ?>">
+                                                                        <label>Gender</label>
+                                                                        <select class="form-control" name="jenkel" data-toggle="select2">
+                                                                            <option><?php echo $datakaryawan['jenkel']; ?></option>
+                                                                            <optgroup label="Gender">
+                                                                                <option value="Male">Male</option>
+                                                                                <option value="Female">Female</option>
+                                                                            </optgroup>
+                                                                        </select>
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label>Alamat</label>
@@ -380,12 +385,30 @@ $i = 1;
                                                                         <input type="text" class="form-control" placeholder="No Telp" name="no_telp" value="<?php echo $datakaryawan['no_tel']; ?>">
                                                                     </div>
                                                                     <div class="form-group col-md-6">
-                                                                        <label>Jabatan</label>
-                                                                        <input type="text" class="form-control" placeholder="Jabatan" name="jabatan" value="<?php echo $datakaryawan['jabatan']; ?>">
+                                                                        <label>Position</label>
+                                                                        <select class="form-control" data-toggle="select2" name="jabatan">
+                                                                            <option><?php echo $datakaryawan['jabatan']; ?></option>
+                                                                            <optgroup label="Position">
+                                                                                <option value="CEO">CEO</option>
+                                                                                <option value="HRD">HRD</option>
+                                                                                <option value="CTO">CTO</option>
+                                                                                <option value="Office Boy">Office Boy</option>
+                                                                                <option value="Programmer">Programmer</option>
+                                                                                <option value="Manager">Manager</option>
+                                                                                <option value="IT">IT</option>
+                                                                            </optgroup>
+                                                                        </select>
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label>Level</label>
-                                                                        <input type="text" class="form-control" placeholder="Level" name="level" value="<?php echo $datakaryawan['level']; ?>">
+                                                                        <select class="form-control" data-toggle="select2" name="level">
+                                                                            <option><?php echo $datakaryawan['level']; ?></option>
+                                                                            <optgroup label="Level">
+                                                                                <option value="admin">Admin</option>
+                                                                                <option value="karyawan">Karyawan</option>
+                                                                            </optgroup>
+                                                                        </select>
+                                                                    
                                                                     </div>
                                                                 </div>
                                                             </div>

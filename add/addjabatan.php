@@ -115,7 +115,6 @@
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="topnav-pages">
                                             <a href="clockin.php" class="dropdown-item">Clock In</a>
-                                            <a href="clockout.php" class="dropdown-item">Clock Out</a>
                                             <a href="addabsen.php" class="dropdown-item">Table Absen</a>
                                             
                                         </div>
@@ -266,7 +265,18 @@
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label>Position</label>
-                                                                        <input type="text" class="form-control" name="jabatan1" value="<?php echo $datajabatan['jabatan_karyawan']; ?>">
+                                                                        <select class="form-control" data-toggle="select2" name="jabatan1">
+                                                                            <option><?php echo $datajabatan['jabatan_karyawan']; ?></option>
+                                                                            <optgroup label="Position">
+                                                                                <option value="CEO">CEO</option>
+                                                                                <option value="HRD">HRD</option>
+                                                                                <option value="CTO">CTO</option>
+                                                                                <option value="Office Boy">Office Boy</option>
+                                                                                <option value="Programmer">Programmer</option>
+                                                                                <option value="Manager">Manager</option>
+                                                                                <option value="IT">IT</option>
+                                                                            </optgroup>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                             </div>

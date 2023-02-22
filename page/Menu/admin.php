@@ -28,7 +28,6 @@
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="topnav-pages">
                                             <a href="../add/clockin.php" class="dropdown-item">Clock In</a>
-                                            <a href="../add/clockout.php" class="dropdown-item">Clock Out</a>
                                             <a href="../add/addabsen.php" class="dropdown-item">Table Absen</a>
                                         </div>
                                     </li>
