@@ -68,12 +68,6 @@ $level = $_SESSION['level'];
                                 <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
-                                    <span>Profile</span>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
-                                    Settings
-                                </a>
                                 <a class="dropdown-item d-flex align-items-center justify-content-between" href="../page/logout.php">
                                     <span>Log Out</span>
                                 </a>
