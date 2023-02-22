@@ -175,67 +175,64 @@ $i = 1;
                                         <p class="card-subtitle mb-4">Insert Employee Data</p>
     
                                         <form method="POST" action="addkaryawan.php">
-                                        <div class="form-group" method="POST">
-                                        <form>
-                                            <div class="form-group">
+                                            <div class="form-group" method="POST">
+                                                <div class="container">
                                                 <label>Employee Id</label>
-                                                <input type="text" class="form-control" value="<?php echo $tambahid?>" name="idkaryawan" readonly>
-                                            </div>
-                                                    
-                                            <div class="form-group">
+                                                <input class="form-control" type="text" name="employee_id" value="<?php echo $tambahid?>" readonly>
+                                                <br>
                                                 <label>Username</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Username" name="username" required>
-                                            </div>
-
-                                            <div class="form-group">
+                                                <input class="form-control" type="text" placeholder="Insert Username" name="username" required>
+                                                <br>
                                                 <label>Password</label>
-                                                <input type="password" class="form-control" placeholder="Enter your Password" name="password" required>
-                                            </div>
-
-                                            
-
-                                            <div class="form-group">
-                                                <label>Name</label>
-                                                <input type="text" pattern="[A-Za-z]{3}" class="form-control" placeholder="Enter your Name" name="nama" required>
-                                            </div>
-
-                                            <div class="form-group">
+                                                <input class="form-control" type="password" placeholder="Insert Password" name="password" required>
+                                                <br>
+                                                <label>Employee Name</label>
+                                                <input class="form-control" type="text" placeholder="Insert Name" name="name" required>
+                                                <br>
                                                 <label>Date Of Birth</label>
-                                                <input type="date" class="form-control" placeholder="Enter your Date Of Birth" name="tanggallahir" required>
-                                            </div>
-                                            
-                                            <label>Gender</label>
-                                            <select class="form-control" data-toggle="select2">
-                                                <option>-- Select --</option>
-                                                <optgroup label="Gender">
-                                                    <option value="">Male</option>
-                                                    <option value="">Female</option>
-                                                </optgroup>
-                                            </select>
-                                            <br>
-
-                                            <div class="form-group">
+                                                <input class="form-control" type="date" placeholder="Insert Date Of Birth" name="tgllhr" required>
+                                                <br>
+                                                <label>Gender</label>
+                                                <select class="form-control" name="jeniskelamin" data-toggle="select2" required>
+                                                    <option>-- Select --</option>
+                                                    <optgroup label="Gender">
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                    </optgroup>
+                                                </select>
+                                                <br>
                                                 <label>Address</label>
-                                                <input type="text" class="form-control" placeholder="Enter your Address" name="address" required>
-                                            </div>
-
-                                            <div class="form-group">
+                                                <input class="form-control" type="text" placeholder="Insert Address" name="alamat" required>
+                                                <br>
                                                 <label>Phone Number</label>
-                                                <input type="number" class="form-control" placeholder="Enter your Phone Number" name="notelp" required>
+                                                <input class="form-control" type="text" placeholder="Insert Phone Number" name="notelp" required>
+                                                <br>
+                                                <label>Position</label>
+                                                <select class="form-control" data-toggle="select2" name="jabatan" required>
+                                                    <option>-- Select --</option>
+                                                    <optgroup label="Position">
+                                                        <option value="CEO">CEO</option>
+                                                        <option value="HRD">HRD</option>
+                                                        <option value="CTO">CTO</option>
+                                                        <option value="Office Boy">Office Boy</option>
+                                                        <option value="Programmer">Programmer</option>
+                                                        <option value="Manager">Manager</option>
+                                                        <option value="IT">IT</option>
+                                                    </optgroup>
+                                                </select>
+                                                <br>
+                                                <label>Level</label>
+                                                <select class="form-control" data-toggle="select2" name="tingkatan" required>
+                                                    <option>-- Select --</option>
+                                                    <optgroup label="Level">
+                                                        <option value="admin">Admin</option>
+                                                        <option value="karyawan">Karyawan</option>
+                                                    </optgroup>
+                                                </select>
+                                                <br>
+                                                <input class="btn btn-primary btn-block" type="submit" value="Add" name="Addkaryawan">
                                             </div>
-
-                                            <label>Position</label>
-                                            <select class="form-control" data-toggle="select2">
-                                                <option>-- Select --</option>
-                                                <optgroup label="Position">
-                                                    <option value="">CEO</option>
-                                                    <option value="">HRD</option>
-                                                </optgroup>
-                                            </select>
-                                            <br>
-                                            <input class="btn btn-primary btn-block" type="submit" value="Add" name="addkaryawan">
-                                        </form>
-                                        </form>
+                                            </form>
                                     </div>
                                     <!-- end card-body-->
                                 </div>     
@@ -245,24 +242,23 @@ $i = 1;
                         <?php
                             if(isset($_POST['addkaryawan'])) {
 
-
-                                $idkaryawan = $_POST['idkaryawan'];
                                 $username = $_POST['username'];
                                 $password = $_POST['password'];
-                                $name = $_POST['nama'];
-                                $tgllhr = $_POST['tanggallahir'];
-                                $gender = $_POST['jeniskelamin'];
-                                $alamat = $_POST['address'];
+                                $namakaryawan = $_POST['name'];
+                                $tanggallahir = $_POST['tgllhr'];
+                                $jenkel = $_POST['jeniskelamin'];
+                                $address = $_POST['alamat'];
                                 $notelepon = $_POST['notelp'];
                                 $position = $_POST['jabatan'];
+                                $level = $_POST['tingkatan'];
                         
                                 // include database connection file
-                                include_once("../Configure/connection.php");
+                                include_once("../configure/connection.php");
                         
                                 // Insert user data into table
                         
                             try { 
-                            $query = "INSERT INTO karyawan(id_karyawan,username,password,nama,tgl_lhr,jenkel,alamat,no_tel,jabatan) VALUES('$idkaryawan','$username','$password','$name','$tgllhr','$gender','$alamat','$notelepon','$position')";
+                            $query = "INSERT INTO karyawan (username, password, nama, tgl_lhr, jenkel, alamat, no_tel,jabatan, level) VALUES('$username','$password','$namakaryawan','$tanggallahir','$jenkel','$address','$notelepon','$position','$level')";
                             $result = mysqli_query($db, $query); 
                         } catch (mysqli_sql_exception $e) { 
                             var_dump($e);
@@ -270,7 +266,7 @@ $i = 1;
                         } 
                         echo "<script>Swal.fire({
                             title: 'Success!',
-                            text: 'Successfully add Employee',
+                            text: 'Successfully Register',
                             icon: 'success',
                             confirmButtonText: 'Cool!'
                             })</script>";
@@ -294,13 +290,14 @@ $i = 1;
                                             <th>No</th>
                                             <th>Employee Id</th>
                                             <th>Username</th>
-                                            <th>Password</th>
                                             <th>Name</th>
                                             <th>Date Of Birth</th>
                                             <th>Gender</th>
                                             <th>Address</th>
                                             <th>Phone Number</th>
                                             <th>Position</th>
+                                            <th>Level</th>
+                                            <th>Password</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -321,13 +318,14 @@ $i = 1;
                                             <td><?php echo $i;?></td>
                                             <td><?php echo $datakaryawan['id_karyawan'];?></td>
                                             <td><?php echo $datakaryawan['username'];?></td>
-                                            <td><?php echo $datakaryawan['password'];?></td>
                                             <td><?php echo $datakaryawan['nama'];?></td>
                                             <td><?php echo $datakaryawan['tgl_lhr'];?></td>
                                             <td><?php echo $datakaryawan['jenkel'];?></td>
                                             <td><?php echo $datakaryawan['alamat'];?></td>
                                             <td><?php echo $datakaryawan['no_tel'];?></td>
                                             <td><?php echo $datakaryawan['jabatan'];?></td>
+                                            <td><?php echo $datakaryawan['level'];?></td>
+                                            <td><?php echo $datakaryawan['password'];?></td>
                                             <td><a  class="btn btn-warning fas fa-wrench" data-toggle="modal" data-backdrop="false" data-target="#modaledit<?php echo $datakaryawan['id_karyawan']; ?>"></a>
                                             &nbsp
                                             <a class="btn btn-danger fas fa-trash" href="../hapus/hapuskaryawan.php?id_karyawan=<?php echo $datakaryawan['id_karyawan']; ?>"></a></td>
@@ -384,6 +382,10 @@ $i = 1;
                                                                     <div class="form-group col-md-6">
                                                                         <label>Jabatan</label>
                                                                         <input type="text" class="form-control" placeholder="Jabatan" name="jabatan" value="<?php echo $datakaryawan['jabatan']; ?>">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <label>Level</label>
+                                                                        <input type="text" class="form-control" placeholder="Level" name="level" value="<?php echo $datakaryawan['level']; ?>">
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -26,7 +26,8 @@
             $alamat = $_POST['alamat'];
             $no_telp = $_POST['no_telp'];
             $jabatan = $_POST['jabatan'];
-            $query = mysqli_query($db, "UPDATE karyawan SET id_karyawan='$id_karyawan',username='$username',password='$password',nama='$nama',tgl_lhr='$tanggal_lahir',jenkel='$jenkel',alamat='$alamat',no_tel='$no_telp',jabatan='$jabatan' WHERE id_karyawan = '$idkaryawan'");
+            $level = $_POST['level'];
+            $query = mysqli_query($db, "UPDATE karyawan SET id_karyawan='$id_karyawan',username='$username',password='$password',nama='$nama',tgl_lhr='$tanggal_lahir',jenkel='$jenkel',alamat='$alamat',no_tel='$no_telp',jabatan='$jabatan',level='$level' WHERE id_karyawan = '$idkaryawan'");
             echo "   <script>  Swal.fire({
                 title: 'Success!',
                 text: 'Successfully Edit Karyawan',
