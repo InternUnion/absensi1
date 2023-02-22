@@ -124,7 +124,22 @@ $level = $_SESSION['level'];
                                 <div class="card-body">
 
                                     <h4 class="card-title">Data Absen</h4>
-                                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+                                    <br>
+                                    <form action="../report/tarikexcel.php" method="post">
+                                        <table>
+                                           <input hidden type="text" name="id_karyawan" value="<?php echo $idusers?>">
+                                                <tr>Dari Tanggal</tr>
+                                                <tr><input class="form-control" type="date" name="dari_tgl" required></tr><br>
+                                                <tr>Sampai Tanggal</tr>
+                                                <tr><input class="form-control" type="date" name="sampai_tgl" required></tr>
+                                                <br>
+                                                <tr><input type="submit" class="btn btn-success" name="filterexcel" value="Excel">&nbsp;</tr>
+                                                <tr><input type="submit" class="btn btn-warning" name="filterpdf" value="PDF"></tr>
+                                        </table>
+                          
+                                    </form>
+                                    <br>
+                                    <table id="datatable" class="table table-striped dt-responsive nowrap">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
@@ -143,6 +158,13 @@ $level = $_SESSION['level'];
                                             <?php
                                             $i = 0;
 
+                                            if(isset($_POST['filterexcel'])){
+                                                $dari_tgl =  $_POST['dari_tgl'];
+                                                $sampai_tgl =  $_POST['sampai_tgl'];
+                                                $result = mysqli_query($db, "select * from absen where date(clock_in) BETWEEN 'date($dari_tgl)' AND 'date($sampai_tgl)'");
+                                            }else{
+                                                $result = mysqli_query($db, "select * from absen ");
+                                            }
                                             $result = mysqli_query($db, "select * from absen where id_karyawan='$idusers'");
                                             while ($dataabsen = mysqli_fetch_array($result)) {
                                                 $i++;

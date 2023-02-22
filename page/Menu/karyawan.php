@@ -19,6 +19,11 @@
                                             <a href="../add/addabsenkaryawan.php" class="dropdown-item">Table Absen</a>
                                         </div>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../page/report.php">
+                                            <i class="mdi mdi-calendar-month"></i>Report
+                                        </a>
+                                    </li>
 
                                 </ul>
                             </div>
