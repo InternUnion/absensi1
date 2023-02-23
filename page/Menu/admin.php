@@ -39,8 +39,8 @@
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="reportadmin.php" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-calendar-text"></i>Report 
+                                        <a class="nav-link dropdown-toggle arrow-none" href="../page/reportadmin.php" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-book-open"></i>Report 
                                         </a>
                                     </li>
 

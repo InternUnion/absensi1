@@ -134,9 +134,19 @@ $level = $_SESSION['level'];
                                             <tr>Sampai Tanggal</tr>
                                             <tr><input class="form-control" type="date" name="sampai_tgl" required></tr>
                                             <br>
-                                            <tr><input type="submit" class="btn btn-success" name="filterexcel" value="Excel">&nbsp;</tr>
-                                            <tr><input type="submit" class="btn btn-warning" name="filterpdf" value="PDF">&nbsp;</tr>
-                                            <tr><input type="submit" class="btn btn-secondary" name="filtersemua" value="Semua Data">&nbsp;</tr>
+                                            <input type="submit" class="btn btn-success" name="filterexcel" value="Excel">&nbsp;
+                                            <input type="submit" class="btn btn-warning" name="filterpdf" value="PDF">&nbsp;
+                                            <div class="btn-group" role="group">
+                                                <button id="btnGroupDrop1" type="button"
+                                                    class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    All Data <i class="mdi mdi-chevron-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                    <input type="submit" class="dropdown-item" name="filtersemuapdf" value="Semua Data (PDF)">                                                    
+                                                    <input type="submit" class="dropdown-item" name="filtersemuaexcel" value="Semua Data (Excel)">                                                    
+                                                </div>
+                                            </div>
                                         </table>
                           
                                     </form>
