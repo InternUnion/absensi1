@@ -68,6 +68,35 @@
 
 
   ?>
+
+<?php
+
+include_once('../configure/connection.php');
+
+if(isset($_POST['filtersemua'])) {
+
+echo "<script>
+window.print();
+</script>";
+$datefrom = $_POST['dari_tgl'];
+$dateto = $_POST['sampai_tgl'];
+
+
+
+// include database connection file
+
+include_once('../configure/connection.php');
+    
+// Insert user data into table
+$query = ("select * from absen where date(clock_in) between '$datefrom' and '$dateto'");
+$result =  mysqli_query($db,$query);
+$i = 1;
+// Show message when user added
+
+}
+
+
+?>
   <div class="section-body">
   <h2 class="section-title">Form Data Absen</h2>
 

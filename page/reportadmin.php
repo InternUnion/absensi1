@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once("../Configure/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,9 +20,6 @@ $level = $_SESSION['level'];
     <meta content="MyraStudio" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="../img/image.png">
-
     <!-- App css -->
     <link href="../template/Admin/horizontal/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../template/Admin/horizontal/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -32,6 +30,13 @@ $level = $_SESSION['level'];
     <link href="../template/Admin/plugins/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
     <link href="../template/Admin/plugins/datatables/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
     <link href="../template/Admin/plugins/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
+
+    <link href="../template/Admin/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+    <link href="../template/Admin/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../template/Admin/plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../template/Admin/plugins/switchery/switchery.min.css" rel="stylesheet" type="text/css" />
+    <link href="../template/Admin/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="../template/Admin/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -90,8 +95,6 @@ $level = $_SESSION['level'];
 
             <?php
 
-            include_once("../Configure/connection.php");
-
             // Fetch all users data from database
             $result = mysqli_query($db, "select * from absen");
 
@@ -121,7 +124,24 @@ $level = $_SESSION['level'];
                                 <div class="card-body">
 
                                     <h4 class="card-title">Data Absen</h4>
-                                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+                                    <br>
+                                    <form action="../report/tarikexcel.php" method="post" target="_blank">
+                                        <table>
+                                            <tr>Masukan Id</tr>
+                                            <tr><input type="text" class="form-control" name="id_karyawan"></tr><br>
+                                            <tr>Dari Tanggal</tr>
+                                            <tr><input class="form-control" type="date" name="dari_tgl" required></tr><br>
+                                            <tr>Sampai Tanggal</tr>
+                                            <tr><input class="form-control" type="date" name="sampai_tgl" required></tr>
+                                            <br>
+                                            <tr><input type="submit" class="btn btn-success" name="filterexcel" value="Excel">&nbsp;</tr>
+                                            <tr><input type="submit" class="btn btn-warning" name="filterpdf" value="PDF">&nbsp;</tr>
+                                            <tr><input type="submit" class="btn btn-secondary" name="filtersemua" value="Semua Data">&nbsp;</tr>
+                                        </table>
+                          
+                                    </form>
+                                    <br>
+                                    <table id="datatable" class="table table-striped dt-responsive nowrap">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
@@ -130,7 +150,6 @@ $level = $_SESSION['level'];
                                                 <th>Nama</th>
                                                 <th>Waktu Masuk</th>
                                                 <th>Waktu Keluar</th>
-                                                <th>Action</th>
                                             </tr>
                                         </thead>
 
@@ -141,7 +160,7 @@ $level = $_SESSION['level'];
 
                                             include_once("../Configure/connection.php");
                                             $i = 0;
-                                            $result = mysqli_query($db, "select * from absen where id_karyawan='$idusers'");
+                                            $result = mysqli_query($db, "select * from absen");
                                             while ($dataabsen = mysqli_fetch_array($result)) {
                                                 $i++;
 
@@ -153,8 +172,6 @@ $level = $_SESSION['level'];
                                                     <td><?php echo $dataabsen['nama']; ?></td>
                                                     <td><?php echo $dataabsen['clock_in']; ?></td>
                                                     <td><?php echo $dataabsen['clock_out']; ?></td>
-                                                    <td><a href="../hapus/hapusabsen.php?id_absen=<?php echo $dataabsen['id_absen'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a>
-                                                    <a href="clockout.php?id_absen=<?php echo $dataabsen['id_absen'];?>" class="btn btn-warning" ><i class="fas fa-clock"></i></a></center></td></td>
                                                 </tr>
                                 </div>
                             </div>
@@ -246,16 +263,29 @@ $level = $_SESSION['level'];
     <script src="../template/Admin/plugins/datatables/dataTables.select.min.js"></script>
     <script src="../template/Admin/plugins/datatables/pdfmake.min.js"></script>
     <script src="../template/Admin/plugins/datatables/vfs_fonts.js"></script>
+
+    
     <!-- third party js ends -->
 
     <!-- Datatables init -->
-    <script src="../template/admin/horizontal/assets/pages/datatables-demo.js"></script>
+    <script src="../template/Admin/horizontal/assets/pages/datatables-demo.js"></script>
 
     <!-- App js -->
-    <script src="../template/admin/horizontal/assets/js/theme.js"></script>
+    <script src="../template/Admin/horizontal/assets/js/theme.js"></script>
 
+    <!-- Plugins js -->
+    <script src="../template/Admin/plugins/autonumeric/autoNumeric-min.js"></script>
+    <script src="../template/Admin/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../template/Admin/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script src="../template/Admin/plugins/moment/moment.js"></script>
+    <script src="../template/Admin/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="../template/Admin/plugins/select2/select2.min.js"></script>
+    <script src="../template/Admin/plugins/switchery/switchery.min.js"></script>
+    <script src="../template/Admin/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="../template/Admin/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
 
     <script src="../template/Admin/horizontal/assets/js/theme.js"></script>
+    <script src="../template/Admin/horizontal/assets/pages/advanced-plugins-demo.js"></script>
 
 </body>
 

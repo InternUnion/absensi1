@@ -127,15 +127,14 @@ $level = $_SESSION['level'];
                                     <br>
                                     <form action="../report/tarikexcel.php" method="post" target="_blank">
                                         <table>
-                                           <input hidden type="text" name="id_karyawan" value="<?php echo $idusers?>">
+                                                <input hidden type="text" name="id_karyawan" value="<?php echo $idusers?>">
                                                 <tr>Dari Tanggal</tr>
                                                 <tr><input class="form-control" type="date" name="dari_tgl" required></tr><br>
                                                 <tr>Sampai Tanggal</tr>
                                                 <tr><input class="form-control" type="date" name="sampai_tgl" required></tr>
                                                 <br>
                                                 <tr><input type="submit" class="btn btn-success" name="filterexcel" value="Excel">&nbsp;</tr>
-                                                <tr><input type="submit" class="btn btn-warning" name="filterpdf" value="PDF" >
-                                            </tr>
+                                                <tr><input type="submit" class="btn btn-warning" name="filterpdf" value="PDF" ></tr>
                                         </table>
                           
                                     </form>
