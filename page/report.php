@@ -125,7 +125,7 @@ $level = $_SESSION['level'];
 
                                     <h4 class="card-title">Data Absen</h4>
                                     <br>
-                                    <form action="../report/tarikexcel.php" method="post">
+                                    <form action="../report/tarikexcel.php" method="post" target="_blank">
                                         <table>
                                            <input hidden type="text" name="id_karyawan" value="<?php echo $idusers?>">
                                                 <tr>Dari Tanggal</tr>
@@ -134,7 +134,7 @@ $level = $_SESSION['level'];
                                                 <tr><input class="form-control" type="date" name="sampai_tgl" required></tr>
                                                 <br>
                                                 <tr><input type="submit" class="btn btn-success" name="filterexcel" value="Excel">&nbsp;</tr>
-                                                <tr><input type="submit" class="btn btn-warning" name="filterpdf" value="PDF">
+                                                <tr><input type="submit" class="btn btn-warning" name="filterpdf" value="PDF" >
                                             </tr>
                                         </table>
                           
