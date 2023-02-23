@@ -134,7 +134,8 @@ $level = $_SESSION['level'];
                                                 <tr><input class="form-control" type="date" name="sampai_tgl" required></tr>
                                                 <br>
                                                 <tr><input type="submit" class="btn btn-success" name="filterexcel" value="Excel">&nbsp;</tr>
-                                                <tr><input type="submit" class="btn btn-warning" name="filterpdf" value="PDF"></tr>
+                                                <tr><input type="submit" class="btn btn-warning" name="filterpdf" value="PDF">
+                                            </tr>
                                         </table>
                           
                                     </form>

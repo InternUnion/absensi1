@@ -1,6 +1,5 @@
 <?php
-	header("Content-type: application/vnd-ms-excel");
-	header("Content-Disposition: attachment; filename=dataabsen.xls");
+	
 	?>
     <?php
 
@@ -8,7 +7,35 @@ include_once('../configure/connection.php');
 
 if(isset($_POST['filterexcel'])) {
 
-   	
+  header("Content-type: application/vnd-ms-excel");
+	header("Content-Disposition: attachment; filename=dataabsen.xls");
+$datefrom = $_POST['dari_tgl'];
+$dateto = $_POST['sampai_tgl'];
+$iduser = $_POST['id_karyawan'];
+
+
+
+// include database connection file
+
+include_once('../configure/connection.php');
+     
+// Insert user data into table
+$query = ("select * from absen where id_karyawan = '$iduser' and date(clock_in) between '$datefrom' and '$dateto'");
+$result =  mysqli_query($db,$query);
+$i = 1;
+// Show message when user added
+
+}
+
+
+?>
+<?php
+
+include_once('../configure/connection.php');
+
+if(isset($_POST['filterpdf'])) {
+
+	header("Content-Disposition: attachment; filename=dataabsen.pdf");
 $datefrom = $_POST['dari_tgl'];
 $dateto = $_POST['sampai_tgl'];
 $iduser = $_POST['id_karyawan'];
@@ -40,7 +67,7 @@ $i = 1;
 </div>
 <div class="card-body">
 <div class="table-responsive">
-  <table class="table table-striped" id="table-1">
+  <table class="table table-striped" id="table-1" border="1">
     <thead>
         <tr>
             <th>No</th>
@@ -80,3 +107,4 @@ Copyright &copy; 2023 <div class="bullet"></div> Design By <a href="#">Arak</a>
 
 </div>
 </footer>
+
