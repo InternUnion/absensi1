@@ -178,7 +178,6 @@ $level = $_SESSION['level'];
                                                     <td><?php echo $dataabsen['clock_in']; ?></td>
                                                     <td><?php echo $dataabsen['clock_out']; ?></td>
                                                     <td><a href="../hapus/hapusabsen.php?id_absen=<?php echo $dataabsen['id_absen'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a>
-                                                    <a href="clockout.php?id_absen=<?php echo $dataabsen['id_absen'];?>" class="btn btn-warning" ><i class="fas fa-clock"></i></a></center></td></td>
                                                 </tr>
                                 </div>
                             </div>
