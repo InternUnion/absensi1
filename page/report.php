@@ -148,7 +148,6 @@ $level = $_SESSION['level'];
                                                 <th>Nama</th>
                                                 <th>Waktu Masuk</th>
                                                 <th>Waktu Keluar</th>
-                                                <th>Action</th>
                                             </tr>
                                         </thead>
 
@@ -177,7 +176,6 @@ $level = $_SESSION['level'];
                                                     <td><?php echo $dataabsen['nama']; ?></td>
                                                     <td><?php echo $dataabsen['clock_in']; ?></td>
                                                     <td><?php echo $dataabsen['clock_out']; ?></td>
-                                                    <td><a href="../hapus/hapusabsen.php?id_absen=<?php echo $dataabsen['id_absen'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a>
                                                 </tr>
                                 </div>
                             </div>
