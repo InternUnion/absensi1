@@ -137,7 +137,7 @@ $i = 1;
   <div class="col-12">
   <div class="card">
   <div class="card-header">
-  <h4>Basic DataTables</h4>
+  <h4>Recap Absent</h4>
   </div>
   <div class="card-body">
   <div class="table-responsive">
@@ -150,7 +150,6 @@ $i = 1;
               <th>Nama</th>
               <th>Waktu Masuk</th>
               <th>Waktu Keluar</th>
-              
           </tr>
       </thead>
 
