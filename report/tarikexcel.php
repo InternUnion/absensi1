@@ -30,7 +30,9 @@
       
   // Insert user data into table
   $query = ("select * from absen where id_karyawan = '$iduser' and date(clock_in) between '$datefrom' and '$dateto'");
+  $query1 = ("SELECT COUNT(clock_in AND clock_out) AS 'total_masuk' FROM absen WHERE id_karyawan = '$iduser'");
   $result =  mysqli_query($db,$query);
+  $result1 =  mysqli_query($db,$query1);
   $i = 1;
   // Show message when user added
 
@@ -60,7 +62,9 @@
       
   // Insert user data into table
   $query = ("select * from absen where id_karyawan = '$iduser' and date(clock_in) between '$datefrom' and '$dateto'");
+  $query1 = ("SELECT COUNT(clock_in AND clock_out) AS 'total_masuk' FROM absen WHERE id_karyawan = '$iduser'");
   $result =  mysqli_query($db,$query);
+  $result1 =  mysqli_query($db,$query1);
   $i = 1;
   // Show message when user added
 
@@ -158,10 +162,11 @@ $i = 1;
           <td><?php echo $dataabsen['id_karyawan']; ?></td>
           <td><?php echo $dataabsen['nama']; ?></td>
           <td><?php echo $dataabsen['clock_in']; ?></td>
-          <td><?php echo $dataabsen['clock_out']; ?></td>
+          <td><?php echo $dataabsen['clock_out']; ?></td> 
           </tr>
-
+          
   <?php    }
+        
   ?>
     </table>
   </div>
@@ -169,6 +174,11 @@ $i = 1;
   </div>
   </div>
   </div>
+  <div>
+    <?php $dataabsen1 = mysqli_fetch_array($result1)?>
+    <h3>Total Masuk : <?php echo $dataabsen1['total_masuk'];?></h3>
+  </div>
+  <br>
   <footer class="main-footer">
   <div class="footer-left">
   Copyright &copy; 2023 <div class="bullet"></div> Design By <a href="#">Arak</a>
