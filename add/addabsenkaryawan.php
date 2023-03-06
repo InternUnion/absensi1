@@ -153,8 +153,8 @@ $level = $_SESSION['level'];
                                                     <td><?php echo $dataabsen['id_absen']; ?></td>
                                                     <td><?php echo $dataabsen['id_karyawan']; ?></td>
                                                     <td><?php echo $dataabsen['nama']; ?></td>
-                                                    <td><?php echo $dataabsen['clock_in']; ?></td>
-                                                    <td><?php echo $dataabsen['clock_out']; ?></td>
+                                                    <td><?php echo $dataabsen['clock_in']; ?> AM</td>
+                                                    <td><?php echo $dataabsen['clock_out']; ?> PM</td>
                                                     <td><a href="../hapus/hapusabsen.php?id_absen=<?php echo $dataabsen['id_absen'];?>" class="btn btn-danger" ><i class="fas fa-trash"></i></a>
                                                     <a href="clockout.php?id_absen=<?php echo $dataabsen['id_absen'];?>" class="btn btn-warning" ><i class="fas fa-clock"></i></a></center></td></td>
                                                 </tr>
