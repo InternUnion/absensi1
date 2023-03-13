@@ -36,7 +36,7 @@
       
   // Insert user data into table
   $query = ("select * from absen where id_karyawan = '$iduser' and date(clock_in) between '$datefrom' and '$dateto'");
-  $query1 = ("SELECT COUNT(clock_in AND clock_out) AS 'total_masuk' FROM absen WHERE id_karyawan = '$iduser'");
+  $query1 = ("SELECT COUNT(clock_in AND clock_out) AS 'total_masuk' FROM absen WHERE id_karyawan = '$iduser' and date(clock_in) between '$datefrom' and '$dateto'");
   $result =  mysqli_query($db,$query);
   $result1 =  mysqli_query($db,$query1);
   $i = 1;
@@ -162,7 +162,7 @@ $i = 1;
                 <?php
                 while($dataabsen = mysqli_fetch_array($result)) {  ?>       
                 <tr>
-                  <td><?php echo $i; ?></td>
+                  <td><?php echo $i++; ?></td>
                   <td><?php echo $dataabsen['id_absen']; ?></td>
                   <td><?php echo $dataabsen['id_karyawan']; ?></td>
                   <td><?php echo $dataabsen['nama']; ?></td>
