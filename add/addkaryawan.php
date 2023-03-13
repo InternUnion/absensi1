@@ -196,7 +196,7 @@ $i = 1;
                                                     </optgroup>
                                                 </select>
                                                 <br>
-                                                <input class="btn btn-primary btn-block" type="submit" value="Add" name="Addkaryawan">
+                                                <input class="btn btn-primary btn-block" type="submit" value="add" name="addkaryawan">
                                             
                                             </form>
                                     </div>
