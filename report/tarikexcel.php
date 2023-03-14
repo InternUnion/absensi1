@@ -68,7 +68,7 @@
       
   // Insert user data into table
   $query = ("select * from absen where id_karyawan = '$iduser' and date(clock_in) between '$datefrom' and '$dateto'");
-  $query1 = ("SELECT COUNT(clock_in AND clock_out) AS 'total_masuk' FROM absen WHERE id_karyawan = '$iduser'");
+  $query1 = ("SELECT COUNT(clock_in AND clock_out) AS 'total_masuk' FROM absen WHERE id_karyawan = '$iduser' and date(clock_in) between '$datefrom' and '$dateto'");
   $result =  mysqli_query($db,$query);
   $result1 =  mysqli_query($db,$query1);
   $i = 1;
@@ -99,6 +99,8 @@ include_once('../configure/connection.php');
     
 // Insert user data into table
 $query = ("select * from absen where date(clock_in) between '$datefrom' and '$dateto'");
+$query1 = ("SELECT COUNT(clock_in AND clock_out) AS 'total_masuk' FROM absen WHERE id_karyawan = '$iduser' and date(clock_in) between '$datefrom' and '$dateto'");
+$result1 =  mysqli_query($db,$query1);
 $result =  mysqli_query($db,$query);
 $i = 1;
 // Show message when user added
@@ -127,7 +129,9 @@ $i = 1;
         
     // Insert user data into table
     $query = ("select * from absen where date(clock_in) between '$datefrom' and '$dateto'");
+    $query1 = ("SELECT COUNT(clock_in AND clock_out) AS 'total_masuk' FROM absen WHERE id_karyawan = '$iduser' and date(clock_in) between '$datefrom' and '$dateto'");
     $result =  mysqli_query($db,$query);
+    $result1 =  mysqli_query($db,$query1);
     $i = 1;
     // Show message when user added
     
